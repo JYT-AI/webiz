@@ -4,7 +4,6 @@
 import frappe
 from webiz.webiz.custom.warehouse import (
     setup_warehouse_custom_fields,
-    setup_warehouse_property_setters,
     setup_project_custom_fields
 )
 
@@ -14,7 +13,6 @@ def after_install():
     try:
         # Warehouse를 사이트 관리용으로 확장
         setup_warehouse_custom_fields()
-        setup_warehouse_property_setters()
         setup_project_custom_fields()
         
         frappe.db.commit()
