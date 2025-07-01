@@ -1,0 +1,328 @@
+{
+ "app": "webiz",
+ "charts": [
+  {
+   "chart_name": "Project Summary",
+   "label": "진행 중인 프로젝트"
+  }
+ ],
+ "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"FM 프로젝트 및 작업 관리 - 프로젝트 계획부터 완료까지\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"프로젝트 관리\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"작업 관리\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"시간 관리\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"이슈 관리\",\"col\":4}},{\"id\":\"card_5\",\"type\":\"card\",\"data\":{\"card_name\":\"보고서\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"설정\",\"col\":4}}]",
+ "creation": "2025-07-01 17:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "project-diagram",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "프로젝트관리",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "프로젝트 관리",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Template",
+   "link_count": 0,
+   "link_to": "Project Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Type",
+   "link_count": 0,
+   "link_to": "Project Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "작업 관리",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task",
+   "link_count": 0,
+   "link_to": "Task",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task Type",
+   "link_count": 0,
+   "link_to": "Task Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Update",
+   "link_count": 0,
+   "link_to": "Project Update",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Daily Work Summary",
+   "link_count": 0,
+   "link_to": "Daily Work Summary",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "시간 관리",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timesheet",
+   "link_count": 0,
+   "link_to": "Timesheet",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Activity Type",
+   "link_count": 0,
+   "link_to": "Activity Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Activity Cost",
+   "link_count": 0,
+   "link_to": "Activity Cost",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "이슈 관리",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Issue",
+   "link_count": 0,
+   "link_to": "Issue",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Issue Type",
+   "link_count": 0,
+   "link_to": "Issue Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "보고서",
+   "link_count": 6,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "Project",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Summary",
+   "link_count": 0,
+   "link_to": "Project Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Project",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Profitability",
+   "link_count": 0,
+   "link_to": "Project Profitability",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Timesheet",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Timesheet Billing Summary",
+   "link_count": 0,
+   "link_to": "Timesheet Billing Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Timesheet",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Daily Timesheet Summary",
+   "link_count": 0,
+   "link_to": "Daily Timesheet Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Task",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Delayed Tasks Summary",
+   "link_count": 0,
+   "link_to": "Delayed Tasks Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Project",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project wise Stock Tracking",
+   "link_count": 0,
+   "link_to": "Project wise Stock Tracking",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "설정",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Projects Settings",
+   "link_count": 0,
+   "link_to": "Projects Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-07-01 17:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "프로젝트관리",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "format": "{} Open",
+   "label": "Project",
+   "link_to": "Project",
+   "stats_filter": "{\"status\":\"Open\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "format": "{} Assigned",
+   "label": "Task",
+   "link_to": "Task",
+   "stats_filter": "{\"_assign\":[\"like\", '%' + frappe.session.user + '%'],\"status\":\"Open\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "format": "{} Draft",
+   "label": "Timesheet",
+   "link_to": "Timesheet",
+   "stats_filter": "{\"docstatus\":0}",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "format": "{} Open",
+   "label": "Issue",
+   "link_to": "Issue",
+   "stats_filter": "{\"status\":\"Open\"}",
+   "type": "DocType"
+  }
+ ],
+ "title": "프로젝트관리",
+ "type": "Workspace"
+}

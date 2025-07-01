@@ -1,0 +1,343 @@
+{
+ "app": "webiz",
+ "charts": [],
+ "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"FM 문서 및 지식 관리 - 문서 저장부터 지식 공유까지\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"파일 관리\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"커뮤니케이션\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"템플릿 관리\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"지식 관리\",\"col\":4}},{\"id\":\"card_5\",\"type\":\"card\",\"data\":{\"card_name\":\"보고서\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"설정\",\"col\":4}}]",
+ "creation": "2025-07-01 17:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "folder",
+ "idx": 0,
+ "indicator_color": "cyan",
+ "is_hidden": 0,
+ "label": "문서관리",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "파일 관리",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "File",
+   "link_count": 0,
+   "link_to": "File",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder",
+   "link_count": 0,
+   "link_to": "Folder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Note",
+   "link_count": 0,
+   "link_to": "Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "ToDo",
+   "link_count": 0,
+   "link_to": "ToDo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "커뮤니케이션",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Communication",
+   "link_count": 0,
+   "link_to": "Communication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Queue",
+   "link_count": 0,
+   "link_to": "Email Queue",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Comment",
+   "link_count": 0,
+   "link_to": "Comment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Activity Log",
+   "link_count": 0,
+   "link_to": "Activity Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "템플릿 관리",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Template",
+   "link_count": 0,
+   "link_to": "Email Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Print Format",
+   "link_count": 0,
+   "link_to": "Print Format",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Letter Head",
+   "link_count": 0,
+   "link_to": "Letter Head",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Terms and Conditions",
+   "link_count": 0,
+   "link_to": "Terms and Conditions",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "지식 관리",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Help Article",
+   "link_count": 0,
+   "link_to": "Help Article",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Help Category",
+   "link_count": 0,
+   "link_to": "Help Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Web Page",
+   "link_count": 0,
+   "link_to": "Web Page",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "보고서",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "File",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "File Storage Usage By Company",
+   "link_count": 0,
+   "link_to": "File Storage Usage By Company",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Communication",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Communication Report",
+   "link_count": 0,
+   "link_to": "Communication Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Email Queue",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Email Delivery Report",
+   "link_count": 0,
+   "link_to": "Email Delivery Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "설정",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Account",
+   "link_count": 0,
+   "link_to": "Email Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Domain",
+   "link_count": 0,
+   "link_to": "Email Domain",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Print Settings",
+   "link_count": 0,
+   "link_to": "Print Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-07-01 17:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "문서관리",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "format": "{} Files",
+   "label": "File",
+   "link_to": "File",
+   "stats_filter": "{\"is_folder\":0}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "format": "{} Public",
+   "label": "Note",
+   "link_to": "Note",
+   "stats_filter": "{\"public\":1}",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "format": "{} Open",
+   "label": "ToDo",
+   "link_to": "ToDo",
+   "stats_filter": "{\"status\":\"Open\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "label": "Communication Report",
+   "link_to": "Communication Report",
+   "type": "Report"
+  }
+ ],
+ "title": "문서관리",
+ "type": "Workspace"
+}

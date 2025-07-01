@@ -1,0 +1,370 @@
+{
+ "app": "webiz",
+ "charts": [
+  {
+   "chart_name": "Accounts Receivable",
+   "label": "매출채권"
+  }
+ ],
+ "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"FM 청구 및 수금 관리 - 청구서 발행부터 수금 완료까지\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"청구 프로세스\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"수금 관리\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"정기 청구\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"세금 관리\",\"col\":4}},{\"id\":\"card_5\",\"type\":\"card\",\"data\":{\"card_name\":\"보고서\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"설정\",\"col\":4}}]",
+ "creation": "2025-07-01 17:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "credit-card",
+ "idx": 0,
+ "indicator_color": "red",
+ "is_hidden": 0,
+ "label": "청구관리",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "청구 프로세스",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "Sales Order",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Invoice",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dunning",
+   "link_count": 0,
+   "link_to": "Dunning",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "POS Invoice",
+   "link_count": 0,
+   "link_to": "POS Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "수금 관리",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Entry",
+   "link_count": 0,
+   "link_to": "Payment Entry",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Request",
+   "link_count": 0,
+   "link_to": "Payment Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Terms Template",
+   "link_count": 0,
+   "link_to": "Payment Terms Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bank Reconciliation Tool",
+   "link_count": 0,
+   "link_to": "Bank Reconciliation Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "정기 청구",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription",
+   "link_count": 0,
+   "link_to": "Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription Plan",
+   "link_count": 0,
+   "link_to": "Subscription Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Auto Repeat",
+   "link_count": 0,
+   "link_to": "Auto Repeat",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "세금 관리",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Taxes and Charges Template",
+   "link_count": 0,
+   "link_to": "Sales Taxes and Charges Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Category",
+   "link_count": 0,
+   "link_to": "Tax Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Rule",
+   "link_count": 0,
+   "link_to": "Tax Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "보고서",
+   "link_count": 6,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "Sales Invoice",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Accounts Receivable",
+   "link_count": 0,
+   "link_to": "Accounts Receivable",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Sales Invoice",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Accounts Receivable Summary",
+   "link_count": 0,
+   "link_to": "Accounts Receivable Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Sales Invoice",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Invoice Trends",
+   "link_count": 0,
+   "link_to": "Sales Invoice Trends",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Payment Entry",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Payment Period Based On Invoice Date",
+   "link_count": 0,
+   "link_to": "Payment Period Based On Invoice Date",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Customer",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Customer Ledger Summary",
+   "link_count": 0,
+   "link_to": "Customer Ledger Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "Sales Invoice",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Sales Register",
+   "link_count": 0,
+   "link_to": "Sales Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "설정",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Accounts Settings",
+   "link_count": 0,
+   "link_to": "Accounts Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Gateway Account",
+   "link_count": 0,
+   "link_to": "Payment Gateway Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Terms and Conditions",
+   "link_count": 0,
+   "link_to": "Terms and Conditions",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-07-01 17:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "청구관리",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "format": "{} Overdue",
+   "label": "Sales Invoice",
+   "link_to": "Sales Invoice",
+   "stats_filter": "{\"status\":\"Overdue\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "format": "{} Draft",
+   "label": "Payment Entry",
+   "link_to": "Payment Entry",
+   "stats_filter": "{\"docstatus\":0}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "format": "{} Active",
+   "label": "Subscription",
+   "link_to": "Subscription",
+   "stats_filter": "{\"status\":\"Active\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "label": "Accounts Receivable",
+   "link_to": "Accounts Receivable",
+   "type": "Report"
+  }
+ ],
+ "title": "청구관리",
+ "type": "Workspace"
+}

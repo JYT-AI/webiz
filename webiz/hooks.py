@@ -8,18 +8,17 @@ app_license = "unlicense"
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "webiz",
-# 		"logo": "/assets/webiz/logo.png",
-# 		"title": "WeBiz",
-# 		"route": "/webiz",
-# 		"has_permission": "webiz.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "webiz",
+		"title": "WeBiz FM",
+		"route": "/app/webiz",
+		"has_permission": "webiz.api.permission.has_app_permission"
+	}
+]
 
 # Includes in <head>
 # ------------------
@@ -86,7 +85,7 @@ app_license = "unlicense"
 # ------------
 
 # before_install = "webiz.install.before_install"
-# after_install = "webiz.install.after_install"
+after_install = "webiz.install.after_install"
 
 # Uninstallation
 # ------------
@@ -132,13 +131,29 @@ app_license = "unlicense"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Customer": {
+		"validate": "webiz.fm_customer_management.utils.validate_fm_customer"
+	},
+	"Quotation": {
+		"validate": "webiz.fm_sales_management.utils.validate_fm_quotation"
+	},
+	"Contract": {
+		"validate": "webiz.fm_sales_management.utils.validate_fm_contract"
+	},
+	"Project": {
+		"validate": "webiz.fm_project_management.utils.validate_fm_project"
+	},
+	"Issue": {
+		"validate": "webiz.fm_service_management.utils.validate_fm_issue"
+	},
+	"Sales Invoice": {
+		"validate": "webiz.fm_billing_management.utils.validate_fm_invoice"
+	},
+	"Warehouse": {
+		"validate": "webiz.webiz.custom.warehouse.validate_warehouse_site"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
