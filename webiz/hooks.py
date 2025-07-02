@@ -6,7 +6,7 @@ app_title = "WeBiz"
 app_publisher = "JYT AI"
 app_description = "WeBiz"
 app_email = "ktk@jyt.ai"
-app_license = "unlicense"
+app_license = "Proprietary"
 
 # Apps
 # ------------------

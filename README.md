@@ -122,7 +122,7 @@ Pre-commit is configured to use the following tools for checking and formatting 
 
 ## 📄 라이선스
 
-unlicense
+Proprietary
 
 ## 📞 지원
 
