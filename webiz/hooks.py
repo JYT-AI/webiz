@@ -64,7 +64,7 @@ def inject_global_sidebar(response=None, **kwargs):
         # Create injection script
         injection_script = f"""
 <!-- Occam Global Sidebar Injection -->
-<style id="occam-global-css">
+<style id="global-css">
 {sidebar_css}
 </style>
 <script>
@@ -85,13 +85,13 @@ def inject_global_sidebar(response=None, **kwargs):
 
     except Exception as e:
         # Silently fail to avoid breaking the response
-        frappe.log_error(f"Error injecting Occam sidebar: {str(e)}")
+        frappe.log_error(f"Error injecting Global sidebar: {str(e)}")
 
 
 def get_sidebar_css():
-    """Get Occam sidebar CSS content"""
+    """Get Global sidebar CSS content"""
     try:
-        css_path = frappe.get_app_path("occam", "public", "css", "occam.css")
+        css_path = frappe.get_app_path("webiz", "public", "css", "global-sidebar.css")
         with open(css_path, 'r') as f:
             return f.read()
     except:
@@ -99,9 +99,9 @@ def get_sidebar_css():
 
 
 def get_sidebar_js():
-    """Get Occam sidebar JavaScript content"""
+    """Get Global sidebar JavaScript content"""
     try:
-        js_path = frappe.get_app_path("occam", "public", "js", "occam-sidebar.js")
+        js_path = frappe.get_app_path("webiz", "public", "js", "global-sidebar.js")
         with open(js_path, 'r') as f:
             return f.read()
     except:

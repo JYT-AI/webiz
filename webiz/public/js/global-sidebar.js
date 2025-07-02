@@ -3,12 +3,12 @@
     'use strict';
 
     // Prevent multiple initializations
-    if (window.occamSidebarInitialized) {
+    if (window.globalSidebarInitialized) {
         return;
     }
-    window.occamSidebarInitialized = true;
+    window.globalSidebarInitialized = true;
 
-    class OccamGlobalSidebar {
+    class GlobalSidebar {
         constructor() {
             this.apps = [];
             this.sidebarVisible = false;
@@ -27,46 +27,28 @@
 
             this.apps = data.message;
 
-            // Add Drive app
-            this.apps.unshift({
-                name: 'occam-drive',
-                title: 'Drive',
-                route: '/occam/drive',
-                logo: '/assets/occam/images/drive-logo.svg',
-                icon: 'folder'
-            });
-
-            // Add AI Chatbot app
-            this.apps.unshift({
-                name: 'occam-ai',
-                title: 'AI',
-                route: '/occam/ai',
-                logo: '/assets/occam/images/ai-logo.svg',
-                icon: 'message-circle'
-            });
-
-            console.log('Occam Sidebar: Loaded', this.apps.length, 'apps');
+            console.log('Global Sidebar: Loaded', this.apps.length, 'apps');
         }
 
         createSidebar() {
             // Check if sidebar already exists
-            if (document.getElementById('occam-global-sidebar')) {
+            if (document.getElementById('global-sidebar')) {
                 return;
             }
 
-            console.log('Occam Sidebar: Creating responsive sidebar...');
+            console.log('Global Sidebar: Creating responsive sidebar...');
 
             // Check if mobile
             const isMobile = window.innerWidth <= 768;
 
             // Create sidebar HTML
             const sidebar = document.createElement('div');
-            sidebar.id = 'occam-global-sidebar';
-            sidebar.className = isMobile ? 'occam-global-sidebar mobile' : 'occam-global-sidebar desktop';
+            sidebar.id = 'global-sidebar';
+            sidebar.className = isMobile ? 'global-sidebar mobile' : 'global-sidebar desktop';
 
             sidebar.innerHTML = `
-                <div class="occam-sidebar-content">
-                    <div class="occam-app-list" id="occam-global-app-list">
+                <div class="global-sidebar-content">
+                    <div class="global-app-list" id="global-app-list">
                         <!-- Apps will be loaded here -->
                     </div>
                 </div>
@@ -95,7 +77,7 @@
             const isMobile = window.innerWidth <= 768;
 
             // Add class to body for CSS targeting
-            document.body.classList.add('occam-sidebar-active');
+            document.body.classList.add('global-sidebar-active');
 
             if (isMobile) {
                 // Mobile: set CSS custom property for bottom offset
@@ -134,18 +116,18 @@
 
         handleResize() {
             window.addEventListener('resize', () => {
-                const sidebar = document.getElementById('occam-global-sidebar');
+                const sidebar = document.getElementById('global-sidebar');
                 if (!sidebar) return;
 
                 const isMobile = window.innerWidth <= 768;
 
                 if (isMobile && !sidebar.classList.contains('mobile')) {
                     // Switch to mobile
-                    sidebar.className = 'occam-global-sidebar mobile';
+                    sidebar.className = 'global-sidebar mobile';
                     document.body.appendChild(sidebar);
                 } else if (!isMobile && !sidebar.classList.contains('desktop')) {
                     // Switch to desktop
-                    sidebar.className = 'occam-global-sidebar desktop';
+                    sidebar.className = 'global-sidebar desktop';
                     document.body.insertBefore(sidebar, document.body.firstChild);
                 }
 
@@ -154,14 +136,14 @@
         }
 
         renderApps() {
-            const appList = document.getElementById('occam-global-app-list');
+            const appList = document.getElementById('global-app-list');
             if (!appList) return;
 
             appList.innerHTML = '';
 
             this.apps.forEach(app => {
                 const appItem = document.createElement('div');
-                appItem.className = 'occam-global-app-item';
+                appItem.className = 'global-app-item';
                 appItem.title = app.title;
 
                 // Check if current page is this app
@@ -171,7 +153,7 @@
                 }
 
                 appItem.innerHTML = `
-                    <div class="occam-global-app-icon">
+                    <div class="global-app-icon">
                         <img src="${app.logo || '/assets/frappe/images/frappe-framework-logo.svg'}"
                              alt="${app.title}"
                              onerror="this.src='/assets/frappe/images/frappe-framework-logo.svg'">
@@ -224,14 +206,14 @@
     // Single initialization to prevent duplicates
     function initializeSidebar() {
         // Check if already initialized
-        if (document.getElementById('occam-global-sidebar')) {
+        if (document.getElementById('global-sidebar')) {
             return;
         }
 
         try {
-            new OccamGlobalSidebar();
+            new GlobalSidebar();
         } catch (error) {
-            console.error('Occam Sidebar: Failed to initialize:', error);
+            console.error('Global Sidebar: Failed to initialize:', error);
         }
     }
 
