@@ -8,7 +8,7 @@
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "folder",
+ "icon": "folder-normal",
  "idx": 0,
  "indicator_color": "cyan",
  "is_hidden": 0,
@@ -18,7 +18,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "파일 관리",
-   "link_count": 4,
+   "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -33,17 +33,7 @@
    "onboard": 1,
    "type": "Link"
   },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Folder",
-   "link_count": 0,
-   "link_to": "Folder",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
+
   {
    "dependencies": "",
    "hidden": 0,
@@ -215,43 +205,13 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "보고서",
-   "link_count": 3,
+   "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
   },
-  {
-   "dependencies": "File",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "File Storage Usage By Company",
-   "link_count": 0,
-   "link_to": "File Storage Usage By Company",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Communication",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Communication Report",
-   "link_count": 0,
-   "link_to": "Communication Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "Email Queue",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Email Delivery Report",
-   "link_count": 0,
-   "link_to": "Email Delivery Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
+
+
+
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -330,12 +290,6 @@
    "link_to": "ToDo",
    "stats_filter": "{\"status\":\"Open\"}",
    "type": "DocType"
-  },
-  {
-   "color": "Purple",
-   "label": "Communication Report",
-   "link_to": "Communication Report",
-   "type": "Report"
   }
  ],
  "title": "문서관리",
