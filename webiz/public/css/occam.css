@@ -1,0 +1,229 @@
+/* Occam Global Sidebar Styles - Responsive Design */
+
+.occam-global-sidebar {
+    position: fixed;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Desktop Sidebar (Left) */
+.occam-global-sidebar.desktop {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+}
+
+.occam-global-sidebar.desktop .occam-sidebar-content {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.occam-global-sidebar.desktop .occam-app-list {
+    flex: 1;
+    padding: 8px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mobile Bottom Tab Bar */
+.occam-global-sidebar.mobile {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--bg-color);
+}
+
+.occam-global-sidebar.mobile .occam-sidebar-content {
+    width: 100%;
+    background: var(--bg-color);
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.occam-global-sidebar.mobile .occam-app-list {
+    padding: 8px 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Desktop App Items */
+.occam-global-sidebar.desktop .occam-global-app-item {
+    width: 44px;
+    height: 44px;
+    margin: 6px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.occam-global-sidebar.desktop .occam-global-app-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.occam-global-sidebar.desktop .occam-global-app-item.active {
+    background: #4299e1;
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+.occam-global-sidebar.desktop .occam-global-app-item.active::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: white;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Mobile App Items */
+.occam-global-sidebar.mobile .occam-global-app-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.occam-global-sidebar.mobile .occam-global-app-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.occam-global-sidebar.mobile .occam-global-app-item.active {
+    background: #4299e1;
+    box-shadow: 0 2px 8px rgba(66, 153, 225, 0.4);
+}
+
+.occam-global-sidebar.mobile .occam-global-app-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 3px;
+    background: white;
+    border-radius: 2px 2px 0 0;
+}
+
+.occam-global-app-icon {
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+}
+
+.occam-global-app-icon img {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 6px !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+/* Override any external CSS that might affect icon positioning */
+.occam-global-sidebar .occam-global-app-item * {
+    position: static !important;
+}
+
+.occam-global-sidebar .occam-global-app-icon * {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+/* CSS Custom Properties */
+:root {
+    --occam-bottom-offset: 0px;
+}
+
+/* Body adjustment for fixed sidebar */
+body.occam-sidebar-active {
+    transition: margin-left 0.3s ease;
+}
+
+/* Desktop body adjustments */
+@media (min-width: 769px) {
+    body.occam-sidebar-active {
+        margin-left: 60px !important;
+        padding-bottom: 0 !important;
+    }
+
+    body.occam-sidebar-active .rt-r-left-0 {
+        left: unset !important;
+    }
+
+    body.occam-sidebar-active .w-screen {
+        width: calc(100vw - 60px) !important;
+    }
+}
+
+/* Mobile body adjustments */
+@media (max-width: 768px) {
+    /* Override h-screen class to account for bottom tab bar */
+    body.occam-sidebar-active .h-screen {
+        height: calc(100vh - var(--occam-bottom-offset)) !important;
+    }
+
+    body.occam-sidebar-active .bottom-0 {
+        bottom: var(--occam-bottom-offset) !important;
+    }
+}
+
+/* Scrollbar styling */
+.occam-app-list::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.occam-app-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.occam-app-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.occam-app-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+

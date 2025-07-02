@@ -1,3 +1,6 @@
+import frappe
+from werkzeug.wrappers import Response
+
 app_name = "webiz"
 app_title = "WeBiz"
 app_publisher = "JYT AI"
@@ -20,66 +23,6 @@ add_to_apps_screen = [
 	}
 ]
 
-# Includes in <head>
-# ------------------
-
-# include js, css files in header of desk.html
-# app_include_css = "/assets/webiz/css/webiz.css"
-# app_include_js = "/assets/webiz/js/webiz.js"
-
-# include js, css files in header of web template
-# web_include_css = "/assets/webiz/css/webiz.css"
-# web_include_js = "/assets/webiz/js/webiz.js"
-
-# include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "webiz/public/scss/website"
-
-# include js, css files in header of web form
-# webform_include_js = {"doctype": "public/js/doctype.js"}
-# webform_include_css = {"doctype": "public/css/doctype.css"}
-
-# include js in page
-# page_js = {"page" : "public/js/file.js"}
-
-# include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
-# doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
-# doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-
-# Svg Icons
-# ------------------
-# include app icons in desk
-# app_include_icons = "webiz/public/icons.svg"
-
-# Home Pages
-# ----------
-
-# application home page (will override Website Settings)
-# home_page = "login"
-
-# website user home page (by Role)
-# role_home_page = {
-# 	"Role": "home_page"
-# }
-
-# Generators
-# ----------
-
-# automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
-
-# automatically load and sync documents of this doctype from downstream apps
-# importable_doctypes = [doctype_1]
-
-# Jinja
-# ----------
-
-# add methods and filters to jinja environment
-# jinja = {
-# 	"methods": "webiz.utils.jinja_methods",
-# 	"filters": "webiz.utils.jinja_filters"
-# }
 
 # Installation
 # ------------
@@ -87,168 +30,79 @@ add_to_apps_screen = [
 # before_install = "webiz.install.before_install"
 after_install = "webiz.install.after_install"
 
-# Uninstallation
-# ------------
 
-# before_uninstall = "webiz.uninstall.before_uninstall"
-# after_uninstall = "webiz.uninstall.after_uninstall"
+# Request hooks to inject global sidebar
+after_request = ["webiz.hooks.inject_global_sidebar"]
 
-# Integration Setup
-# ------------------
-# To set up dependencies/integrations with other apps
-# Name of the app being installed is passed as an argument
+def inject_global_sidebar(response=None, **kwargs):
+    """Inject Occam global sidebar into all HTML responses"""
+    if not response or not isinstance(response, Response):
+        return
 
-# before_app_install = "webiz.utils.before_app_install"
-# after_app_install = "webiz.utils.after_app_install"
+    # Only inject into HTML responses
+    if not response.content_type or 'text/html' not in response.content_type:
+        return
 
-# Integration Cleanup
-# -------------------
-# To clean up dependencies/integrations with other apps
-# Name of the app being uninstalled is passed as an argument
+    # Skip if response is empty or not HTML
+    if not response.data:
+        return
 
-# before_app_uninstall = "webiz.utils.before_app_uninstall"
-# after_app_uninstall = "webiz.utils.after_app_uninstall"
+    try:
+        html_content = response.data.decode('utf-8')
 
-# Desk Notifications
-# ------------------
-# See frappe.core.notifications.get_notification_config
+        # Skip if not a proper HTML document
+        if '<html' not in html_content.lower() or '<body' not in html_content.lower():
+            return
 
-# notification_config = "webiz.notifications.get_notification_config"
+        # Read sidebar CSS and JS
+        sidebar_css = get_sidebar_css()
+        sidebar_js = get_sidebar_js()
 
-# Permissions
-# -----------
-# Permissions evaluated in scripted ways
+        if not sidebar_css or not sidebar_js:
+            return
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+        # Create injection script
+        injection_script = f"""
+<!-- Occam Global Sidebar Injection -->
+<style id="occam-global-css">
+{sidebar_css}
+</style>
+<script>
+// Occam Global Sidebar - Injected via after_request hook
+(function() {{
+    'use strict';
+    {sidebar_js}
+}})();
+</script>
+<!-- End Occam Global Sidebar Injection -->
+"""
 
-# Document Events
-# ---------------
-# Hook on document methods and events
+        # Inject before closing body tag
+        if '</body>' in html_content:
+            html_content = html_content.replace('</body>', injection_script + '\n</body>')
+            response.data = html_content.encode('utf-8')
+            response.content_length = len(response.data)
 
-doc_events = {
-	"Customer": {
-		"validate": "webiz.fm_customer_management.utils.validate_fm_customer"
-	},
-	"Quotation": {
-		"validate": "webiz.fm_sales_management.utils.validate_fm_quotation"
-	},
-	"Contract": {
-		"validate": "webiz.fm_sales_management.utils.validate_fm_contract"
-	},
-	"Project": {
-		"validate": "webiz.fm_project_management.utils.validate_fm_project"
-	},
-	"Issue": {
-		"validate": "webiz.fm_service_management.utils.validate_fm_issue"
-	},
-	"Sales Invoice": {
-		"validate": "webiz.fm_billing_management.utils.validate_fm_invoice"
-	},
-	"Warehouse": {
-		"validate": "webiz.webiz.custom.warehouse.validate_warehouse_site"
-	}
-}
+    except Exception as e:
+        # Silently fail to avoid breaking the response
+        frappe.log_error(f"Error injecting Occam sidebar: {str(e)}")
 
-# Scheduled Tasks
-# ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"webiz.tasks.all"
-# 	],
-# 	"daily": [
-# 		"webiz.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"webiz.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"webiz.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"webiz.tasks.monthly"
-# 	],
-# }
+def get_sidebar_css():
+    """Get Occam sidebar CSS content"""
+    try:
+        css_path = frappe.get_app_path("occam", "public", "css", "occam.css")
+        with open(css_path, 'r') as f:
+            return f.read()
+    except:
+        return ""
 
-# Testing
-# -------
 
-# before_tests = "webiz.install.before_tests"
-
-# Overriding Methods
-# ------------------------------
-#
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "webiz.event.get_events"
-# }
-#
-# each overriding function accepts a `data` argument;
-# generated from the base implementation of the doctype dashboard,
-# along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-# 	"Task": "webiz.task.get_dashboard_data"
-# }
-
-# exempt linked doctypes from being automatically cancelled
-#
-# auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
-# Ignore links to specified DocTypes when deleting documents
-# -----------------------------------------------------------
-
-# ignore_links_on_delete = ["Communication", "ToDo"]
-
-# Request Events
-# ----------------
-# before_request = ["webiz.utils.before_request"]
-# after_request = ["webiz.utils.after_request"]
-
-# Job Events
-# ----------
-# before_job = ["webiz.utils.before_job"]
-# after_job = ["webiz.utils.after_job"]
-
-# User Data Protection
-# --------------------
-
-# user_data_fields = [
-# 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
-# 		"partial": 1,
-# 	},
-# 	{
-# 		"doctype": "{doctype_3}",
-# 		"strict": False,
-# 	},
-# 	{
-# 		"doctype": "{doctype_4}"
-# 	}
-# ]
-
-# Authentication and authorization
-# --------------------------------
-
-# auth_hooks = [
-# 	"webiz.auth.validate"
-# ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
-
+def get_sidebar_js():
+    """Get Occam sidebar JavaScript content"""
+    try:
+        js_path = frappe.get_app_path("occam", "public", "js", "occam-sidebar.js")
+        with open(js_path, 'r') as f:
+            return f.read()
+    except:
+        return ""
