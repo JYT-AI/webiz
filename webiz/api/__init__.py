@@ -1,3 +1,3 @@
 # WeBiz API Module
 
-from .current_datetime import current_datetime
+from .utils import current_datetime
