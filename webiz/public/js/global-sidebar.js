@@ -16,18 +16,38 @@
         }
 
         async init() {
-            await this.loadApps();
-            this.createSidebar();
-            this.setupEventListeners();
+            try {
+                await this.loadApps();
+                this.createSidebar();
+                this.setupEventListeners();
+            } catch (error) {
+                console.error('Global Sidebar: Initialization failed:', error);
+                // Still try to create sidebar with empty apps
+                this.apps = [];
+                this.createSidebar();
+                this.setupEventListeners();
+            }
         }
 
         async loadApps() {
-            const response = await fetch('/api/method/frappe.apps.get_apps');
-            const data = await response.json();
+            try {
+                const response = await fetch('/api/method/frappe.apps.get_apps');
 
-            this.apps = data.message;
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-            console.log('Global Sidebar: Loaded', this.apps.length, 'apps');
+                const data = await response.json();
+
+                // Ensure apps is always an array
+                this.apps = Array.isArray(data.message) ? data.message : [];
+
+                console.log('Global Sidebar: Loaded', this.apps.length, 'apps');
+            } catch (error) {
+                console.warn('Global Sidebar: Failed to load apps:', error);
+                // Set empty array as fallback
+                this.apps = [];
+            }
         }
 
         createSidebar() {
@@ -140,6 +160,12 @@
             if (!appList) return;
 
             appList.innerHTML = '';
+
+            // Ensure apps is an array before iterating
+            if (!Array.isArray(this.apps)) {
+                console.warn('Global Sidebar: Apps is not an array, skipping render');
+                return;
+            }
 
             this.apps.forEach(app => {
                 const appItem = document.createElement('div');
