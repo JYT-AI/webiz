@@ -1,0 +1,16 @@
+        {
+            "name": "Frappe Debug (Port 8001)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/apps/frappe/frappe/utils/bench_helper.py",
+            "args": [
+                "frappe", "serve", "--port", "8001", "--noreload", "--nothreading"
+            ],
+            "pythonPath": "${workspaceFolder}/env/bin/python",
+            "cwd": "${workspaceFolder}/sites",
+            "env": {
+                "DEV_SERVER": "1"
+            },
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
