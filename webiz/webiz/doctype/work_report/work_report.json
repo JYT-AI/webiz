@@ -16,34 +16,57 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "report_name",
-  "work_session",
+  "report_title",
+  "work_site",
+  "project",
   "column_break_4",
-  "contract",
-  "customer",
-  "section_break_8",
-  "work_location",
-  "worker",
-  "column_break_11",
   "report_date",
-  "work_duration",
-  "section_break_15",
+  "report_type",
+  "status",
+  "section_break_8",
+  "prepared_by",
+  "reviewed_by",
+  "approved_by",
+  "column_break_12",
+  "work_start_date",
+  "work_end_date",
+  "total_work_hours",
+  "section_break_16",
   "work_summary",
-  "completion_details",
-  "section_break_18",
-  "total_items",
-  "completed_items",
-  "column_break_21",
-  "completion_rate",
-  "section_break_24",
-  "report_status",
-  "sent_date",
-  "column_break_27",
-  "attachments",
+  "work_description",
+  "section_break_19",
+  "completed_checklists",
+  "section_break_21",
+  "worker_attendance_summary",
+  "total_workers",
+  "total_attendance_hours",
+  "column_break_25",
+  "overtime_hours",
+  "break_hours",
+  "efficiency_rating",
   "section_break_29",
+  "materials_used",
+  "equipment_used",
+  "section_break_32",
+  "issues_encountered",
+  "safety_incidents",
+  "quality_issues",
+  "section_break_36",
+  "recommendations",
+  "next_steps",
+  "section_break_39",
+  "photos",
+  "attachments",
+  "section_break_42",
+  "customer_feedback",
+  "customer_signature",
+  "column_break_45",
+  "supervisor_comments",
+  "supervisor_signature",
+  "section_break_48",
   "created_by",
   "created_date",
-  "column_break_32",
+  "column_break_51",
   "modified_by",
   "modified_date"
  ],
@@ -56,195 +79,313 @@
    "reqd": 1
   },
   {
-   "fieldname": "report_name",
+   "fieldname": "report_title",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "보고서명",
-   "read_only": 1
+   "label": "Report Title",
+   "reqd": 1
   },
   {
-   "fieldname": "work_session",
+   "fieldname": "work_site",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "작업 세션",
-   "options": "Work Session",
+   "label": "Work Site",
+   "options": "Work Site",
    "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   },
   {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "contract",
-   "fieldtype": "Link",
-   "label": "계약",
-   "options": "Contract",
-   "read_only": 1
+   "default": "Today",
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Report Date",
+   "reqd": 1
   },
   {
-   "fieldname": "customer",
-   "fieldtype": "Link",
+   "default": "Daily",
+   "fieldname": "report_type",
+   "fieldtype": "Select",
+   "label": "Report Type",
+   "options": "Daily\nWeekly\nMonthly\nProject Completion\nIncident\nQuality\nSafety"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "고객사",
-   "options": "Customer",
-   "read_only": 1
+   "label": "Status",
+   "options": "Draft\nUnder Review\nApproved\nSubmitted\nRejected"
   },
   {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break",
-   "label": "작업 정보"
+   "label": "Report Information"
   },
   {
-   "fieldname": "work_location",
+   "fieldname": "prepared_by",
    "fieldtype": "Link",
-   "label": "작업장소",
-   "options": "Work Site",
-   "read_only": 1
-  },
-  {
-   "fieldname": "worker",
-   "fieldtype": "Link",
-   "label": "작업자",
+   "label": "Prepared By",
    "options": "Employee",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_11",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "report_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "보고서 일자",
-   "read_only": 1
-  },
-  {
-   "fieldname": "work_duration",
-   "fieldtype": "Int",
-   "label": "작업 시간 (분)",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_15",
-   "fieldtype": "Section Break",
-   "label": "작업 요약"
-  },
-  {
-   "fieldname": "work_summary",
-   "fieldtype": "Text",
-   "label": "작업 요약",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completion_details",
-   "fieldtype": "Text",
-   "label": "완료 상세",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break",
-   "label": "완료 통계"
-  },
-  {
-   "fieldname": "total_items",
-   "fieldtype": "Int",
-   "label": "총 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completed_items",
-   "fieldtype": "Int",
-   "label": "완료 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_21",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "completion_rate",
-   "fieldtype": "Percent",
-   "label": "완료율",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_24",
-   "fieldtype": "Section Break",
-   "label": "발송 정보"
-  },
-  {
-   "fieldname": "report_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "보고서 상태",
-   "options": "Draft\nSent\nDelivered",
-   "default": "Draft",
    "reqd": 1
   },
   {
-   "fieldname": "sent_date",
-   "fieldtype": "Datetime",
-   "label": "발송일",
-   "read_only": 1
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "Employee"
   },
   {
-   "fieldname": "column_break_27",
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_12",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "attachments",
-   "fieldtype": "Text",
-   "label": "첨부파일",
+   "fieldname": "work_start_date",
+   "fieldtype": "Date",
+   "label": "Work Start Date"
+  },
+  {
+   "fieldname": "work_end_date",
+   "fieldtype": "Date",
+   "label": "Work End Date"
+  },
+  {
+   "fieldname": "total_work_hours",
+   "fieldtype": "Float",
+   "label": "Total Work Hours",
+   "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Work Summary"
+  },
+  {
+   "fieldname": "work_summary",
+   "fieldtype": "Text Editor",
+   "label": "Work Summary"
+  },
+  {
+   "fieldname": "work_description",
+   "fieldtype": "Text",
+   "label": "Detailed Work Description"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Completed Checklists"
+  },
+  {
+   "fieldname": "completed_checklists",
+   "fieldtype": "Table MultiSelect",
+   "label": "Completed Checklists",
+   "options": "Work Checklist"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Worker Attendance"
+  },
+  {
+   "fieldname": "worker_attendance_summary",
+   "fieldtype": "Text",
+   "label": "Worker Attendance Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_workers",
+   "fieldtype": "Int",
+   "label": "Total Workers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_attendance_hours",
+   "fieldtype": "Float",
+   "label": "Total Attendance Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "break_hours",
+   "fieldtype": "Float",
+   "label": "Break Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "efficiency_rating",
+   "fieldtype": "Rating",
+   "label": "Efficiency Rating"
   },
   {
    "fieldname": "section_break_29",
    "fieldtype": "Section Break",
-   "label": "시스템 정보"
+   "label": "Resources Used"
+  },
+  {
+   "fieldname": "materials_used",
+   "fieldtype": "Text",
+   "label": "Materials Used"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Text",
+   "label": "Equipment Used"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break",
+   "label": "Issues & Incidents"
+  },
+  {
+   "fieldname": "issues_encountered",
+   "fieldtype": "Text",
+   "label": "Issues Encountered"
+  },
+  {
+   "fieldname": "safety_incidents",
+   "fieldtype": "Text",
+   "label": "Safety Incidents"
+  },
+  {
+   "fieldname": "quality_issues",
+   "fieldtype": "Text",
+   "label": "Quality Issues"
+  },
+  {
+   "fieldname": "section_break_36",
+   "fieldtype": "Section Break",
+   "label": "Recommendations & Next Steps"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Text",
+   "label": "Recommendations"
+  },
+  {
+   "fieldname": "next_steps",
+   "fieldtype": "Text",
+   "label": "Next Steps"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "photos",
+   "fieldtype": "Table MultiSelect",
+   "label": "Photos",
+   "options": "File"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table MultiSelect",
+   "label": "Documents",
+   "options": "File"
+  },
+  {
+   "fieldname": "section_break_42",
+   "fieldtype": "Section Break",
+   "label": "Approvals & Signatures"
+  },
+  {
+   "fieldname": "customer_feedback",
+   "fieldtype": "Text",
+   "label": "Customer Feedback"
+  },
+  {
+   "fieldname": "customer_signature",
+   "fieldtype": "Signature",
+   "label": "Customer Signature"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervisor_comments",
+   "fieldtype": "Text",
+   "label": "Supervisor Comments"
+  },
+  {
+   "fieldname": "supervisor_signature",
+   "fieldtype": "Signature",
+   "label": "Supervisor Signature"
+  },
+  {
+   "fieldname": "section_break_48",
+   "fieldtype": "Section Break",
+   "label": "System Information"
   },
   {
    "fieldname": "created_by",
    "fieldtype": "Link",
-   "label": "생성자",
+   "label": "Created By",
    "options": "User",
    "read_only": 1
   },
   {
    "fieldname": "created_date",
    "fieldtype": "Datetime",
-   "label": "생성일시",
+   "label": "Created Date",
    "read_only": 1
   },
   {
-   "fieldname": "column_break_32",
+   "fieldname": "column_break_51",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "modified_by",
    "fieldtype": "Link",
-   "label": "수정자",
+   "label": "Modified By",
    "options": "User",
    "read_only": 1
   },
   {
    "fieldname": "modified_date",
    "fieldtype": "Datetime",
-   "label": "수정일시",
+   "label": "Modified Date",
    "read_only": 1
   }
  ],
- "has_web_view": 0,
+ "has_web_view": 1,
  "hide_heading": 0,
  "hide_toolbar": 0,
  "idx": 0,
  "image_view": 0,
  "in_create": 0,
- "is_submittable": 0,
+ "is_submittable": 1,
  "issingle": 0,
  "istable": 0,
- "max_attachments": 10,
+ "max_attachments": 50,
  "modified": "2025-07-09 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "WeBiz",
@@ -262,6 +403,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
@@ -274,10 +416,11 @@
    "report": 1,
    "role": "Work Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
-   "create": 0,
+   "create": 1,
    "delete": 0,
    "email": 1,
    "export": 1,
@@ -286,10 +429,11 @@
    "report": 1,
    "role": "Work Supervisor",
    "share": 0,
+   "submit": 1,
    "write": 1
   },
   {
-   "create": 0,
+   "create": 1,
    "delete": 0,
    "email": 0,
    "export": 0,
@@ -298,16 +442,17 @@
    "report": 1,
    "role": "Worker",
    "share": 0,
-   "write": 0
+   "submit": 0,
+   "write": 1
   }
  ],
- "quick_entry": 1,
+ "quick_entry": 0,
  "restrict_to_domain": "",
  "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "report_name",
+ "title_field": "report_title",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
