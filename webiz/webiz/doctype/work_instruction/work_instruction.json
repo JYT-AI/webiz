@@ -1,0 +1,404 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "instruction_title",
+  "work_site",
+  "customer",
+  "column_break_4",
+  "instruction_type",
+  "priority",
+  "status",
+  "section_break_8",
+  "effective_date",
+  "expiry_date",
+  "version",
+  "column_break_12",
+  "created_by_employee",
+  "approved_by",
+  "approval_date",
+  "section_break_16",
+  "instruction_summary",
+  "detailed_instructions",
+  "section_break_19",
+  "safety_requirements",
+  "required_tools",
+  "required_materials",
+  "column_break_23",
+  "estimated_time",
+  "skill_level_required",
+  "certification_required",
+  "section_break_27",
+  "step_by_step_guide",
+  "section_break_29",
+  "reference_documents",
+  "attachments",
+  "section_break_32",
+  "related_checklists",
+  "auto_assign_checklist",
+  "column_break_35",
+  "notification_list",
+  "send_notifications",
+  "section_break_38",
+  "revision_history",
+  "section_break_40",
+  "created_by",
+  "created_date",
+  "column_break_43",
+  "modified_by",
+  "modified_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WI-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "instruction_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Instruction Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Work Site",
+   "options": "Work Site"
+  },
+  {
+   "fetch_from": "work_site.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "General",
+   "fieldname": "instruction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Instruction Type",
+   "options": "General\nSafety\nMaintenance\nInspection\nInstallation\nRepair\nCleaning\nEmergency"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nUnder Review\nApproved\nActive\nInactive\nArchived"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Validity & Approval"
+  },
+  {
+   "fieldname": "effective_date",
+   "fieldtype": "Date",
+   "label": "Effective Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "default": "1.0",
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_by_employee",
+   "fieldtype": "Link",
+   "label": "Created By Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Instructions"
+  },
+  {
+   "fieldname": "instruction_summary",
+   "fieldtype": "Text",
+   "label": "Instruction Summary"
+  },
+  {
+   "fieldname": "detailed_instructions",
+   "fieldtype": "Text Editor",
+   "label": "Detailed Instructions"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "safety_requirements",
+   "fieldtype": "Text",
+   "label": "Safety Requirements"
+  },
+  {
+   "fieldname": "required_tools",
+   "fieldtype": "Text",
+   "label": "Required Tools"
+  },
+  {
+   "fieldname": "required_materials",
+   "fieldtype": "Text",
+   "label": "Required Materials"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_time",
+   "fieldtype": "Float",
+   "label": "Estimated Time (Hours)",
+   "precision": "2"
+  },
+  {
+   "default": "Basic",
+   "fieldname": "skill_level_required",
+   "fieldtype": "Select",
+   "label": "Skill Level Required",
+   "options": "Basic\nIntermediate\nAdvanced\nExpert"
+  },
+  {
+   "fieldname": "certification_required",
+   "fieldtype": "Text",
+   "label": "Certification Required"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break",
+   "label": "Step-by-Step Guide"
+  },
+  {
+   "fieldname": "step_by_step_guide",
+   "fieldtype": "Table",
+   "label": "Steps",
+   "options": "Work Instruction Step"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "References & Attachments"
+  },
+  {
+   "fieldname": "reference_documents",
+   "fieldtype": "Text",
+   "label": "Reference Documents"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table MultiSelect",
+   "label": "Attachments",
+   "options": "File"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break",
+   "label": "Checklist Integration"
+  },
+  {
+   "fieldname": "related_checklists",
+   "fieldtype": "Table MultiSelect",
+   "label": "Related Checklists",
+   "options": "Work Checklist"
+  },
+  {
+   "default": 0,
+   "fieldname": "auto_assign_checklist",
+   "fieldtype": "Check",
+   "label": "Auto Assign to Checklist"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notification_list",
+   "fieldtype": "Text",
+   "label": "Notification List (Emails)"
+  },
+  {
+   "default": 0,
+   "fieldname": "send_notifications",
+   "fieldtype": "Check",
+   "label": "Send Notifications on Update"
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break",
+   "label": "Revision History"
+  },
+  {
+   "fieldname": "revision_history",
+   "fieldtype": "Text",
+   "label": "Revision History",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_40",
+   "fieldtype": "Section Break",
+   "label": "System Information"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Datetime",
+   "label": "Created Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_43",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "Modified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Datetime",
+   "label": "Modified Date",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 1,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "max_attachments": 20,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Instruction",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Supervisor",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Worker",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "quick_entry": 0,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "instruction_title",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

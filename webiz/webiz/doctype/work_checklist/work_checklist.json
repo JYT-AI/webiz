@@ -1,0 +1,369 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "checklist_name",
+  "work_site",
+  "project",
+  "column_break_4",
+  "status",
+  "priority",
+  "checklist_type",
+  "section_break_8",
+  "assigned_to",
+  "supervisor",
+  "due_date",
+  "column_break_12",
+  "start_date",
+  "completion_date",
+  "estimated_hours",
+  "section_break_16",
+  "description",
+  "instructions",
+  "section_break_19",
+  "checklist_items",
+  "section_break_21",
+  "completion_percentage",
+  "total_items",
+  "completed_items",
+  "column_break_25",
+  "total_score",
+  "achieved_score",
+  "quality_rating",
+  "section_break_29",
+  "supervisor_comments",
+  "worker_comments",
+  "section_break_32",
+  "attachments",
+  "section_break_34",
+  "created_by",
+  "created_date",
+  "column_break_37",
+  "modified_by",
+  "modified_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WCL-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Checklist Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Work Site",
+   "options": "Work Site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nIn Progress\nCompleted\nCancelled\nOn Hold",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "default": "Daily",
+   "fieldname": "checklist_type",
+   "fieldtype": "Select",
+   "label": "Checklist Type",
+   "options": "Daily\nWeekly\nMonthly\nProject\nSafety\nQuality\nMaintenance\nInspection"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Assignment & Schedule"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "label": "Supervisor",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estimated_hours",
+   "fieldtype": "Float",
+   "label": "Estimated Hours",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Text",
+   "label": "Special Instructions"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Checklist Items"
+  },
+  {
+   "fieldname": "checklist_items",
+   "fieldtype": "Table",
+   "label": "Checklist Items",
+   "options": "Work Checklist Item"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Progress & Quality"
+  },
+  {
+   "fieldname": "completion_percentage",
+   "fieldtype": "Percent",
+   "label": "Completion %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_items",
+   "fieldtype": "Int",
+   "label": "Total Items",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_items",
+   "fieldtype": "Int",
+   "label": "Completed Items",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_score",
+   "fieldtype": "Float",
+   "label": "Total Score",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "achieved_score",
+   "fieldtype": "Float",
+   "label": "Achieved Score",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "quality_rating",
+   "fieldtype": "Rating",
+   "label": "Quality Rating"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "supervisor_comments",
+   "fieldtype": "Text",
+   "label": "Supervisor Comments"
+  },
+  {
+   "fieldname": "worker_comments",
+   "fieldtype": "Text",
+   "label": "Worker Comments"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table MultiSelect",
+   "label": "Attachments",
+   "options": "File"
+  },
+  {
+   "fieldname": "section_break_34",
+   "fieldtype": "Section Break",
+   "label": "System Information"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Datetime",
+   "label": "Created Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "Modified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Datetime",
+   "label": "Modified Date",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "max_attachments": 20,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Checklist",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Supervisor",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Worker",
+   "share": 0,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "checklist_name",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
