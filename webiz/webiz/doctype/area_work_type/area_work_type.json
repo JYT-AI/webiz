@@ -1,0 +1,351 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "work_area",
+  "area_name",
+  "work_site",
+  "column_break_4",
+  "work_type",
+  "work_type_name",
+  "category",
+  "section_break_8",
+  "is_active",
+  "is_mandatory",
+  "priority_level",
+  "column_break_12",
+  "frequency",
+  "estimated_duration_hours",
+  "estimated_duration_minutes",
+  "section_break_16",
+  "effective_date",
+  "expiry_date",
+  "column_break_19",
+  "assigned_supervisor",
+  "default_assignee",
+  "section_break_22",
+  "special_requirements",
+  "notes",
+  "section_break_25",
+  "checklist_template",
+  "auto_create_checklist",
+  "column_break_28",
+  "requires_approval",
+  "approval_level",
+  "section_break_31",
+  "created_by",
+  "created_date",
+  "column_break_34",
+  "modified_by",
+  "modified_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "AWT-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_area",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "작업구역",
+   "options": "Work Area",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "work_area.area_name",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "구역명",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_area.work_site",
+   "fieldname": "work_site",
+   "fieldtype": "Link",
+   "label": "사업장",
+   "options": "Work Site",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "업무유형",
+   "options": "Work Type",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "work_type.work_type_name",
+   "fieldname": "work_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "업무유형명",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_type.category",
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "label": "카테고리",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "설정 정보"
+  },
+  {
+   "default": 1,
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "활성화"
+  },
+  {
+   "default": 0,
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "label": "필수 업무"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority_level",
+   "fieldtype": "Select",
+   "label": "우선순위",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "수행 빈도",
+   "options": "Daily\nWeekly\nBi-weekly\nMonthly\nQuarterly\nAs Needed"
+  },
+  {
+   "fieldname": "estimated_duration_hours",
+   "fieldtype": "Int",
+   "label": "예상 소요시간 (시간)"
+  },
+  {
+   "fieldname": "estimated_duration_minutes",
+   "fieldtype": "Int",
+   "label": "예상 소요시간 (분)"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "유효 기간"
+  },
+  {
+   "fieldname": "effective_date",
+   "fieldtype": "Date",
+   "label": "시작일"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "종료일"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_supervisor",
+   "fieldtype": "Link",
+   "label": "담당 감독자",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "default_assignee",
+   "fieldtype": "Link",
+   "label": "기본 담당자",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "추가 정보"
+  },
+  {
+   "fieldname": "special_requirements",
+   "fieldtype": "Text",
+   "label": "특별 요구사항"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "비고"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "체크리스트 설정"
+  },
+  {
+   "fieldname": "checklist_template",
+   "fieldtype": "Link",
+   "label": "체크리스트 템플릿",
+   "options": "Checklist Template"
+  },
+  {
+   "default": 0,
+   "fieldname": "auto_create_checklist",
+   "fieldtype": "Check",
+   "label": "자동 체크리스트 생성"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "requires_approval",
+   "fieldtype": "Check",
+   "label": "승인 필요"
+  },
+  {
+   "fieldname": "approval_level",
+   "fieldtype": "Select",
+   "label": "승인 레벨",
+   "options": "Supervisor\nManager\nDirector"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break",
+   "label": "시스템 정보"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "생성자",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Datetime",
+   "label": "생성일시",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "수정자",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Datetime",
+   "label": "수정일시",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "max_attachments": 3,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Area Work Type",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Supervisor",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Worker",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "quick_entry": 1,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "work_area",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

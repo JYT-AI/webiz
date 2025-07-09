@@ -27,7 +27,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "현장 관리",
-   "link_count": 3,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -57,6 +57,17 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Work Area",
+   "link_count": 0,
+   "link_to": "Work Area",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Project",
    "link_count": 0,
    "link_to": "Project",
@@ -68,7 +79,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "직원 스케줄",
-   "link_count": 3,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -79,6 +90,17 @@
    "label": "Site Schedule",
    "link_count": 0,
    "link_to": "Site Schedule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Assignment",
+   "link_count": 0,
+   "link_to": "Work Assignment",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -120,7 +142,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "체크리스트",
-   "link_count": 2,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -131,6 +153,17 @@
    "label": "Work Checklist",
    "link_count": 0,
    "link_to": "Work Checklist",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Checklist Template",
+   "link_count": 0,
+   "link_to": "Checklist Template",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -232,9 +265,31 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "설정",
-   "link_count": 2,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Type",
+   "link_count": 0,
+   "link_to": "Work Type",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Area Work Type",
+   "link_count": 0,
+   "link_to": "Area Work Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "dependencies": "",
@@ -302,6 +357,22 @@
    "label": "Work Report",
    "link_to": "Work Report",
    "stats_filter": "{\"docstatus\":0}",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "format": "{} Assigned",
+   "label": "Work Assignment",
+   "link_to": "Work Assignment",
+   "stats_filter": "{\"status\":\"Assigned\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "format": "{} Active",
+   "label": "Work Area",
+   "link_to": "Work Area",
+   "stats_filter": "{\"status\":\"Active\"}",
    "type": "DocType"
   }
  ],

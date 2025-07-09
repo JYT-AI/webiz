@@ -18,8 +18,11 @@
   "naming_series",
   "checklist_name",
   "work_site",
+  "work_area",
   "project",
   "column_break_4",
+  "work_type",
+  "checklist_template",
   "status",
   "priority",
   "checklist_type",
@@ -80,6 +83,12 @@
    "reqd": 1
   },
   {
+   "fieldname": "work_area",
+   "fieldtype": "Link",
+   "label": "Work Area",
+   "options": "Work Area"
+  },
+  {
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
@@ -88,6 +97,18 @@
   {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Link",
+   "label": "Work Type",
+   "options": "Work Type"
+  },
+  {
+   "fieldname": "checklist_template",
+   "fieldtype": "Link",
+   "label": "Checklist Template",
+   "options": "Checklist Template"
   },
   {
    "default": "Pending",

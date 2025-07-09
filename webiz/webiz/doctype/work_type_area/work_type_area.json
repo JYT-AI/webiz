@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_copy": 0,
+ "allow_events_in_timeline": 0,
+ "allow_guest_to_view": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "area_type",
+  "is_mandatory",
+  "column_break_3",
+  "estimated_frequency",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "area_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "구역 유형",
+   "options": "Office\nWarehouse\nProduction\nMaintenance\nStorage\nCommon Area\nRestroom\nKitchen\nMeeting Room\nOther",
+   "reqd": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "필수 적용"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "estimated_frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "예상 빈도",
+   "options": "Daily\nWeekly\nBi-weekly\nMonthly\nQuarterly\nAs Needed"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "비고"
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 1,
+ "max_attachments": 0,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Type Area",
+ "naming_rule": "",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 0,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0
+}

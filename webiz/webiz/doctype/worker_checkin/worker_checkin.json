@@ -19,6 +19,7 @@
   "worker",
   "worker_name",
   "work_site",
+  "work_area",
   "column_break_4",
   "checkin_date",
   "checkin_time",
@@ -82,6 +83,12 @@
    "label": "Work Site",
    "options": "Work Site",
    "reqd": 1
+  },
+  {
+   "fieldname": "work_area",
+   "fieldtype": "Link",
+   "label": "Work Area",
+   "options": "Work Area"
   },
   {
    "fieldname": "column_break_4",

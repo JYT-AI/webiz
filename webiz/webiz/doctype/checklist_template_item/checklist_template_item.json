@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_copy": 0,
+ "allow_events_in_timeline": 0,
+ "allow_guest_to_view": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_name",
+  "description",
+  "column_break_3",
+  "item_type",
+  "is_mandatory",
+  "section_break_6",
+  "max_score",
+  "sequence",
+  "column_break_9",
+  "requires_photo",
+  "requires_note",
+  "section_break_12",
+  "reference_document",
+  "reference_link",
+  "column_break_15",
+  "safety_note",
+  "special_instructions"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "항목명",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "설명"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Task",
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "항목 유형",
+   "options": "Task\nSafety Check\nQuality Check\nCleaning\nInspection\nMaintenance\nDocumentation\nOther"
+  },
+  {
+   "default": 0,
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "필수 항목"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "10",
+   "fieldname": "max_score",
+   "fieldtype": "Float",
+   "label": "만점",
+   "precision": "2"
+  },
+  {
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "순서"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "requires_photo",
+   "fieldtype": "Check",
+   "label": "사진 필요"
+  },
+  {
+   "default": 0,
+   "fieldname": "requires_note",
+   "fieldtype": "Check",
+   "label": "메모 필요"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_document",
+   "fieldtype": "Data",
+   "label": "참조 문서"
+  },
+  {
+   "fieldname": "reference_link",
+   "fieldtype": "Data",
+   "label": "참조 링크"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "safety_note",
+   "fieldtype": "Small Text",
+   "label": "안전 주의사항"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Small Text",
+   "label": "특별 지시사항"
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 1,
+ "max_attachments": 0,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Checklist Template Item",
+ "naming_rule": "",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 0,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0
+}
