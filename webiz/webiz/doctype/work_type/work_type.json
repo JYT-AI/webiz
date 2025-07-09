@@ -1,0 +1,326 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "work_type_name",
+  "work_type_code",
+  "column_break_4",
+  "category",
+  "status",
+  "priority",
+  "section_break_8",
+  "description",
+  "detailed_instructions",
+  "section_break_11",
+  "estimated_duration_hours",
+  "estimated_duration_minutes",
+  "column_break_14",
+  "difficulty_level",
+  "skill_level_required",
+  "section_break_17",
+  "safety_requirements",
+  "required_equipment",
+  "required_materials",
+  "section_break_21",
+  "default_checklist_template",
+  "auto_create_checklist",
+  "column_break_24",
+  "requires_supervisor_approval",
+  "requires_photo_evidence",
+  "section_break_27",
+  "applicable_areas",
+  "section_break_29",
+  "created_by",
+  "created_date",
+  "column_break_32",
+  "modified_by",
+  "modified_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WT-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "업무유형명",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_type_code",
+   "fieldtype": "Data",
+   "label": "업무유형 코드",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "카테고리",
+   "options": "청소\n방역\n점검\n정비\n보안\n환경\n기타",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "상태",
+   "options": "Active\nInactive\nDeprecated",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "우선순위",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "업무 설명"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "업무 설명"
+  },
+  {
+   "fieldname": "detailed_instructions",
+   "fieldtype": "Text",
+   "label": "상세 지시사항"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "소요시간 및 난이도"
+  },
+  {
+   "fieldname": "estimated_duration_hours",
+   "fieldtype": "Int",
+   "label": "예상 소요시간 (시간)"
+  },
+  {
+   "fieldname": "estimated_duration_minutes",
+   "fieldtype": "Int",
+   "label": "예상 소요시간 (분)"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "difficulty_level",
+   "fieldtype": "Select",
+   "label": "난이도",
+   "options": "Easy\nMedium\nHard\nExpert"
+  },
+  {
+   "default": "Basic",
+   "fieldname": "skill_level_required",
+   "fieldtype": "Select",
+   "label": "필요 기술 수준",
+   "options": "Basic\nIntermediate\nAdvanced\nExpert"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "요구사항"
+  },
+  {
+   "fieldname": "safety_requirements",
+   "fieldtype": "Text",
+   "label": "안전 요구사항"
+  },
+  {
+   "fieldname": "required_equipment",
+   "fieldtype": "Text",
+   "label": "필요 장비"
+  },
+  {
+   "fieldname": "required_materials",
+   "fieldtype": "Text",
+   "label": "필요 자재"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "체크리스트 설정"
+  },
+  {
+   "fieldname": "default_checklist_template",
+   "fieldtype": "Link",
+   "label": "기본 체크리스트 템플릿",
+   "options": "Checklist Template"
+  },
+  {
+   "default": 0,
+   "fieldname": "auto_create_checklist",
+   "fieldtype": "Check",
+   "label": "자동 체크리스트 생성"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "requires_supervisor_approval",
+   "fieldtype": "Check",
+   "label": "감독자 승인 필요"
+  },
+  {
+   "default": 0,
+   "fieldname": "requires_photo_evidence",
+   "fieldtype": "Check",
+   "label": "사진 증빙 필요"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break",
+   "label": "적용 구역"
+  },
+  {
+   "fieldname": "applicable_areas",
+   "fieldtype": "Table",
+   "label": "적용 가능한 구역 유형",
+   "options": "Work Type Area"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "시스템 정보"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "생성자",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Datetime",
+   "label": "생성일시",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "수정자",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Datetime",
+   "label": "수정일시",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 0,
+ "max_attachments": 5,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Type",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Supervisor",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Worker",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "quick_entry": 1,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "work_type_name",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
