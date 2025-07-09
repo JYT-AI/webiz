@@ -20,57 +20,22 @@ except ImportError:
 class WorkSite(Document):
     def before_insert(self):
         """Set default values before inserting"""
-        self.created_by = frappe.session.user
-        self.created_date = now()
+        # 단순화된 시스템에서는 기본 설정만 수행
+        pass
         
     def before_save(self):
         """Validate and set values before saving"""
-        self.modified_by = frappe.session.user
-        self.modified_date = now()
-        
-        # Validate dates
-        if self.start_date and self.end_date:
-            if getdate(self.start_date) > getdate(self.end_date):
-                frappe.throw(_("Start Date cannot be after End Date"))
-        
-        # Validate coordinates
-        if self.latitude and (self.latitude < -90 or self.latitude > 90):
-            frappe.throw(_("Latitude must be between -90 and 90"))
-            
-        if self.longitude and (self.longitude < -180 or self.longitude > 180):
-            frappe.throw(_("Longitude must be between -180 and 180"))
-            
-        # Validate area
-        if self.area_sqm and self.area_sqm < 0:
-            frappe.throw(_("Area cannot be negative"))
-            
-        # Validate floors
-        if self.floors and self.floors < 0:
-            frappe.throw(_("Number of floors cannot be negative"))
-            
-        # Validate contract value
-        if self.contract_value and self.contract_value < 0:
-            frappe.throw(_("Contract value cannot be negative"))
+        # 단순화된 검증만 수행
+        pass
     
     def validate(self):
         """Additional validation"""
         # Check if customer exists
         if self.customer and not frappe.db.exists("Customer", self.customer):
             frappe.throw(_("Customer {0} does not exist").format(self.customer))
-            
-        # Check if project exists and belongs to the same customer
-        if self.project:
-            project_customer = frappe.db.get_value("Project", self.project, "customer")
-            if project_customer and project_customer != self.customer:
-                frappe.throw(_("Project {0} does not belong to Customer {1}").format(
-                    self.project, self.customer))
     
     def on_update(self):
         """Actions to perform after update"""
-        # Update related projects if customer changed
-        if self.has_value_changed("customer") and self.project:
-            frappe.db.set_value("Project", self.project, "customer", self.customer)
-
         # Generate QR code if enabled and not exists
         if self.qr_enabled and not self.qr_code:
             self.generate_qr_code()
@@ -94,22 +59,7 @@ class WorkSite(Document):
     @frappe.whitelist()
     def get_location_info(self):
         """Get formatted location information"""
-        location_parts = []
-        
-        if self.address_line_1:
-            location_parts.append(self.address_line_1)
-        if self.address_line_2:
-            location_parts.append(self.address_line_2)
-        if self.city:
-            location_parts.append(self.city)
-        if self.state:
-            location_parts.append(self.state)
-        if self.postal_code:
-            location_parts.append(self.postal_code)
-        if self.country:
-            location_parts.append(self.country)
-            
-        return ", ".join(location_parts)
+        return self.address or ""
     
     @frappe.whitelist()
     def get_active_workers(self):
@@ -147,9 +97,9 @@ class WorkSite(Document):
         try:
             # Create QR code data (minimal information)
             qr_data = {
-                "t": "wsc",  # type: work_site_checkin (shortened)
-                "ws": self.name,  # work_site (shortened)
-                "ts": int(now().timestamp())  # timestamp (shortened)
+                "type": "work_site_checkin",
+                "work_location": self.name,
+                "timestamp": int(now().timestamp())
             }
 
             # Convert to JSON string
@@ -256,7 +206,6 @@ def get_site_summary(work_site):
         "site_name": site_doc.site_name,
         "status": site_doc.status,
         "customer": site_doc.customer,
-        "site_manager": site_doc.site_manager,
         "active_workers": worker_count,
         "pending_tasks": pending_tasks,
         "completed_today": completed_today,
@@ -265,22 +214,13 @@ def get_site_summary(work_site):
 
 
 @frappe.whitelist()
-def get_nearby_sites(latitude, longitude, radius_km=10):
-    """Get work sites within specified radius"""
-    if not latitude or not longitude:
-        return []
-        
-    # Using Haversine formula for distance calculation
-    sites = frappe.db.sql("""
-        SELECT name, site_name, latitude, longitude,
-               (6371 * acos(cos(radians(%s)) * cos(radians(latitude)) * 
-                cos(radians(longitude) - radians(%s)) + sin(radians(%s)) * 
-                sin(radians(latitude)))) AS distance
-        FROM `tabWork Site`
-        WHERE latitude IS NOT NULL AND longitude IS NOT NULL
-        AND status = 'Active'
-        HAVING distance < %s
-        ORDER BY distance
-    """, (latitude, longitude, latitude, radius_km), as_dict=True)
-    
+def get_nearby_sites(latitude=None, longitude=None, radius_km=10):
+    """Get work sites within specified radius - simplified version"""
+    # 단순화된 시스템에서는 GPS 좌표를 사용하지 않으므로 모든 활성 사이트 반환
+    sites = frappe.get_all("Work Site",
+        filters={"status": "Active"},
+        fields=["name", "site_name", "customer", "address"],
+        order_by="site_name"
+    )
+
     return sites

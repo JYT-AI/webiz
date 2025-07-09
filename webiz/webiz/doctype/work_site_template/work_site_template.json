@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_copy": 0,
+ "allow_events_in_timeline": 0,
+ "allow_guest_to_view": 0,
+ "allow_import": 0,
+ "allow_rename": 0,
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "work_template",
+  "template_name",
+  "column_break_4",
+  "category",
+  "estimated_minutes"
+ ],
+ "fields": [
+  {
+   "fieldname": "work_template",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "작업 템플릿",
+   "options": "Work Template",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "work_template.template_name",
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "템플릿명",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "work_template.category",
+   "fieldname": "category",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "카테고리",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_template.estimated_minutes",
+   "fieldname": "estimated_minutes",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "예상시간(분)",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 0,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "istable": 1,
+ "max_attachments": 0,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Site Template",
+ "naming_rule": "",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 0,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "track_seen": 0,
+ "track_views": 0
+}
