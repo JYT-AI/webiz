@@ -16,34 +16,24 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "report_name",
-  "work_session",
+  "task_name",
+  "work_location",
   "column_break_4",
   "contract",
-  "customer",
+  "checklist_template",
   "section_break_8",
-  "work_location",
-  "worker",
-  "column_break_11",
-  "report_date",
-  "work_duration",
-  "section_break_15",
-  "work_summary",
-  "completion_details",
-  "section_break_18",
-  "total_items",
-  "completed_items",
-  "column_break_21",
-  "completion_rate",
-  "section_break_24",
-  "report_status",
-  "sent_date",
-  "column_break_27",
-  "attachments",
-  "section_break_29",
+  "task_description",
+  "section_break_11",
+  "estimated_duration",
+  "priority",
+  "column_break_15",
+  "status",
+  "effective_from",
+  "effective_to",
+  "section_break_20",
   "created_by",
   "created_date",
-  "column_break_32",
+  "column_break_23",
   "modified_by",
   "modified_date"
  ],
@@ -52,22 +42,22 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "WR-.YYYY.-",
+   "options": "WT-.YYYY.-",
    "reqd": 1
   },
   {
-   "fieldname": "report_name",
+   "fieldname": "task_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "보고서명",
-   "read_only": 1
+   "label": "작업명",
+   "reqd": 1
   },
   {
-   "fieldname": "work_session",
+   "fieldname": "work_location",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "작업 세션",
-   "options": "Work Session",
+   "label": "작업장소",
+   "options": "Work Site",
    "reqd": 1
   },
   {
@@ -77,130 +67,73 @@
   {
    "fieldname": "contract",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "계약",
    "options": "Contract",
-   "read_only": 1
+   "reqd": 1
   },
   {
-   "fieldname": "customer",
+   "fieldname": "checklist_template",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "고객사",
-   "options": "Customer",
-   "read_only": 1
+   "label": "체크리스트 템플릿",
+   "options": "Work Template",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break",
+   "label": "작업 설명"
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Text",
+   "label": "작업 설명"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
    "label": "작업 정보"
   },
   {
-   "fieldname": "work_location",
-   "fieldtype": "Link",
-   "label": "작업장소",
-   "options": "Work Site",
-   "read_only": 1
-  },
-  {
-   "fieldname": "worker",
-   "fieldtype": "Link",
-   "label": "작업자",
-   "options": "Employee",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_11",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "report_date",
-   "fieldtype": "Date",
+   "fieldname": "estimated_duration",
+   "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "보고서 일자",
-   "read_only": 1
-  },
-  {
-   "fieldname": "work_duration",
-   "fieldtype": "Int",
-   "label": "작업 시간 (분)",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_15",
-   "fieldtype": "Section Break",
-   "label": "작업 요약"
-  },
-  {
-   "fieldname": "work_summary",
-   "fieldtype": "Text",
-   "label": "작업 요약",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completion_details",
-   "fieldtype": "Text",
-   "label": "완료 상세",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break",
-   "label": "완료 통계"
-  },
-  {
-   "fieldname": "total_items",
-   "fieldtype": "Int",
-   "label": "총 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completed_items",
-   "fieldtype": "Int",
-   "label": "완료 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_21",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "completion_rate",
-   "fieldtype": "Percent",
-   "label": "완료율",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_24",
-   "fieldtype": "Section Break",
-   "label": "발송 정보"
-  },
-  {
-   "fieldname": "report_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "보고서 상태",
-   "options": "Draft\nSent\nDelivered",
-   "default": "Draft",
+   "label": "예상 소요시간 (분)",
    "reqd": 1
   },
   {
-   "fieldname": "sent_date",
-   "fieldtype": "Datetime",
-   "label": "발송일",
-   "read_only": 1
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "우선순위",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "default": "Medium"
   },
   {
-   "fieldname": "column_break_27",
+   "fieldname": "column_break_15",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "attachments",
-   "fieldtype": "Text",
-   "label": "첨부파일",
-   "read_only": 1
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "상태",
+   "options": "Active\nInactive\nCompleted",
+   "default": "Active",
+   "reqd": 1
   },
   {
-   "fieldname": "section_break_29",
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "유효 시작일",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "유효 종료일"
+  },
+  {
+   "fieldname": "section_break_20",
    "fieldtype": "Section Break",
    "label": "시스템 정보"
   },
@@ -218,7 +151,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_32",
+   "fieldname": "column_break_23",
    "fieldtype": "Column Break"
   },
   {
@@ -244,11 +177,11 @@
  "is_submittable": 0,
  "issingle": 0,
  "istable": 0,
- "max_attachments": 10,
+ "max_attachments": 5,
  "modified": "2025-07-09 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "WeBiz",
- "name": "Work Report",
+ "name": "Work Task",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -307,7 +240,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "report_name",
+ "title_field": "task_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

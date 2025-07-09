@@ -16,34 +16,28 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "report_name",
-  "work_session",
+  "session_name",
+  "work_assignment",
   "column_break_4",
-  "contract",
-  "customer",
-  "section_break_8",
-  "work_location",
   "worker",
+  "work_location",
+  "section_break_8",
+  "session_date",
+  "checkin_time",
   "column_break_11",
-  "report_date",
-  "work_duration",
+  "checkout_time",
+  "actual_duration",
   "section_break_15",
-  "work_summary",
-  "completion_details",
+  "session_status",
+  "completion_percentage",
   "section_break_18",
-  "total_items",
-  "completed_items",
-  "column_break_21",
-  "completion_rate",
-  "section_break_24",
-  "report_status",
-  "sent_date",
-  "column_break_27",
-  "attachments",
-  "section_break_29",
+  "checklist_items",
+  "section_break_21",
+  "worker_notes",
+  "section_break_23",
   "created_by",
   "created_date",
-  "column_break_32",
+  "column_break_26",
   "modified_by",
   "modified_date"
  ],
@@ -52,22 +46,22 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "WR-.YYYY.-",
+   "options": "WS-.YYYY.-",
    "reqd": 1
   },
   {
-   "fieldname": "report_name",
+   "fieldname": "session_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "보고서명",
+   "label": "세션명",
    "read_only": 1
   },
   {
-   "fieldname": "work_session",
+   "fieldname": "work_assignment",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "작업 세션",
-   "options": "Work Session",
+   "label": "작업 할당",
+   "options": "Work Assignment",
    "reqd": 1
   },
   {
@@ -75,24 +69,12 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "contract",
-   "fieldtype": "Link",
-   "label": "계약",
-   "options": "Contract",
-   "read_only": 1
-  },
-  {
-   "fieldname": "customer",
+   "fieldname": "worker",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "고객사",
-   "options": "Customer",
+   "label": "작업자",
+   "options": "Employee",
    "read_only": 1
-  },
-  {
-   "fieldname": "section_break_8",
-   "fieldtype": "Section Break",
-   "label": "작업 정보"
   },
   {
    "fieldname": "work_location",
@@ -102,105 +84,80 @@
    "read_only": 1
   },
   {
-   "fieldname": "worker",
-   "fieldtype": "Link",
-   "label": "작업자",
-   "options": "Employee",
-   "read_only": 1
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "시간 정보"
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "작업일",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checkin_time",
+   "fieldtype": "Datetime",
+   "label": "체크인 시간"
   },
   {
    "fieldname": "column_break_11",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "report_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "보고서 일자",
-   "read_only": 1
+   "fieldname": "checkout_time",
+   "fieldtype": "Datetime",
+   "label": "체크아웃 시간"
   },
   {
-   "fieldname": "work_duration",
+   "fieldname": "actual_duration",
    "fieldtype": "Int",
-   "label": "작업 시간 (분)",
+   "label": "실제 소요시간 (분)",
    "read_only": 1
   },
   {
    "fieldname": "section_break_15",
    "fieldtype": "Section Break",
-   "label": "작업 요약"
+   "label": "상태 정보"
   },
   {
-   "fieldname": "work_summary",
-   "fieldtype": "Text",
-   "label": "작업 요약",
-   "read_only": 1
+   "fieldname": "session_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "세션 상태",
+   "options": "Started\nIn Progress\nCompleted\nCancelled",
+   "default": "Started",
+   "reqd": 1
   },
   {
-   "fieldname": "completion_details",
-   "fieldtype": "Text",
-   "label": "완료 상세",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break",
-   "label": "완료 통계"
-  },
-  {
-   "fieldname": "total_items",
-   "fieldtype": "Int",
-   "label": "총 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completed_items",
-   "fieldtype": "Int",
-   "label": "완료 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_21",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "completion_rate",
+   "fieldname": "completion_percentage",
    "fieldtype": "Percent",
    "label": "완료율",
    "read_only": 1
   },
   {
-   "fieldname": "section_break_24",
+   "fieldname": "section_break_18",
    "fieldtype": "Section Break",
-   "label": "발송 정보"
+   "label": "체크리스트 항목"
   },
   {
-   "fieldname": "report_status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "보고서 상태",
-   "options": "Draft\nSent\nDelivered",
-   "default": "Draft",
-   "reqd": 1
+   "fieldname": "checklist_items",
+   "fieldtype": "Table",
+   "label": "체크리스트 항목",
+   "options": "Session Checklist Item"
   },
   {
-   "fieldname": "sent_date",
-   "fieldtype": "Datetime",
-   "label": "발송일",
-   "read_only": 1
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "작업자 메모"
   },
   {
-   "fieldname": "column_break_27",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "attachments",
+   "fieldname": "worker_notes",
    "fieldtype": "Text",
-   "label": "첨부파일",
-   "read_only": 1
+   "label": "작업자 메모"
   },
   {
-   "fieldname": "section_break_29",
+   "fieldname": "section_break_23",
    "fieldtype": "Section Break",
    "label": "시스템 정보"
   },
@@ -218,7 +175,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_32",
+   "fieldname": "column_break_26",
    "fieldtype": "Column Break"
   },
   {
@@ -248,7 +205,7 @@
  "modified": "2025-07-09 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "WeBiz",
- "name": "Work Report",
+ "name": "Work Session",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -289,7 +246,7 @@
    "write": 1
   },
   {
-   "create": 0,
+   "create": 1,
    "delete": 0,
    "email": 0,
    "export": 0,
@@ -298,7 +255,7 @@
    "report": 1,
    "role": "Worker",
    "share": 0,
-   "write": 0
+   "write": 1
   }
  ],
  "quick_entry": 1,
@@ -307,7 +264,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "report_name",
+ "title_field": "session_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

@@ -27,7 +27,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "현장 관리",
-   "link_count": 4,
+   "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -53,17 +53,7 @@
    "onboard": 0,
    "type": "Link"
   },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Work Area",
-   "link_count": 0,
-   "link_to": "Work Area",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
+
   {
    "dependencies": "",
    "hidden": 0,
@@ -78,18 +68,19 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "직원 스케줄",
-   "link_count": 4,
+   "label": "작업 관리",
+   "link_count": 5,
    "onboard": 0,
    "type": "Card Break"
   },
+
   {
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Site Schedule",
+   "label": "Work Task",
    "link_count": 0,
-   "link_to": "Site Schedule",
+   "link_to": "Work Task",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -101,6 +92,17 @@
    "label": "Work Assignment",
    "link_count": 0,
    "link_to": "Work Assignment",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Session",
+   "link_count": 0,
+   "link_to": "Work Session",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -141,8 +143,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "체크리스트",
-   "link_count": 4,
+   "label": "템플릿 관리",
+   "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -161,9 +163,9 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Checklist Template",
+   "label": "Work Template",
    "link_count": 0,
-   "link_to": "Checklist Template",
+   "link_to": "Work Template",
    "link_type": "DocType",
    "onboard": 1,
    "type": "Link"
@@ -179,17 +181,7 @@
    "onboard": 0,
    "type": "Link"
   },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Work Instruction",
-   "link_count": 0,
-   "link_to": "Work Instruction",
-   "link_type": "DocType",
-   "onboard": 1,
-   "type": "Link"
-  },
+
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -364,17 +356,26 @@
    "format": "{} Assigned",
    "label": "Work Assignment",
    "link_to": "Work Assignment",
-   "stats_filter": "{\"status\":\"Assigned\"}",
+   "stats_filter": "{\"assignment_status\":\"Assigned\"}",
    "type": "DocType"
   },
   {
-   "color": "Cyan",
+   "color": "Yellow",
    "format": "{} Active",
-   "label": "Work Area",
-   "link_to": "Work Area",
+   "label": "Work Task",
+   "link_to": "Work Task",
    "stats_filter": "{\"status\":\"Active\"}",
    "type": "DocType"
+  },
+  {
+   "color": "Teal",
+   "format": "{} In Progress",
+   "label": "Work Session",
+   "link_to": "Work Session",
+   "stats_filter": "{\"session_status\":\"In Progress\"}",
+   "type": "DocType"
   }
+
  ],
  "title": "현장관리",
  "type": "Workspace"

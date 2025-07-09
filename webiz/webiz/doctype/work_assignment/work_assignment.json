@@ -16,34 +16,28 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "report_name",
-  "work_session",
+  "assignment_name",
+  "work_task",
   "column_break_4",
-  "contract",
-  "customer",
+  "assigned_to",
+  "assignment_date",
   "section_break_8",
-  "work_location",
-  "worker",
+  "start_date",
+  "end_date",
   "column_break_11",
-  "report_date",
-  "work_duration",
+  "scheduled_time",
+  "estimated_duration",
   "section_break_15",
-  "work_summary",
-  "completion_details",
-  "section_break_18",
-  "total_items",
-  "completed_items",
-  "column_break_21",
-  "completion_rate",
-  "section_break_24",
-  "report_status",
-  "sent_date",
-  "column_break_27",
-  "attachments",
-  "section_break_29",
+  "recurrence_type",
+  "recurrence_days",
+  "column_break_18",
+  "assignment_status",
+  "section_break_21",
+  "notes",
+  "section_break_23",
   "created_by",
   "created_date",
-  "column_break_32",
+  "column_break_26",
   "modified_by",
   "modified_date"
  ],
@@ -52,22 +46,22 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "WR-.YYYY.-",
+   "options": "WA-.YYYY.-",
    "reqd": 1
   },
   {
-   "fieldname": "report_name",
+   "fieldname": "assignment_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "보고서명",
+   "label": "할당명",
    "read_only": 1
   },
   {
-   "fieldname": "work_session",
+   "fieldname": "work_task",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "작업 세션",
-   "options": "Work Session",
+   "label": "작업",
+   "options": "Work Task",
    "reqd": 1
   },
   {
@@ -75,132 +69,94 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "contract",
-   "fieldtype": "Link",
-   "label": "계약",
-   "options": "Contract",
-   "read_only": 1
-  },
-  {
-   "fieldname": "customer",
+   "fieldname": "assigned_to",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "고객사",
-   "options": "Customer",
-   "read_only": 1
+   "label": "할당 직원",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assignment_date",
+   "fieldtype": "Date",
+   "label": "할당일",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break",
-   "label": "작업 정보"
+   "label": "스케줄 정보"
   },
   {
-   "fieldname": "work_location",
-   "fieldtype": "Link",
-   "label": "작업장소",
-   "options": "Work Site",
-   "read_only": 1
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "시작일",
+   "reqd": 1
   },
   {
-   "fieldname": "worker",
-   "fieldtype": "Link",
-   "label": "작업자",
-   "options": "Employee",
-   "read_only": 1
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "종료일"
   },
   {
    "fieldname": "column_break_11",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "report_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "보고서 일자",
-   "read_only": 1
+   "fieldname": "scheduled_time",
+   "fieldtype": "Time",
+   "label": "예정 시간"
   },
   {
-   "fieldname": "work_duration",
+   "fieldname": "estimated_duration",
    "fieldtype": "Int",
-   "label": "작업 시간 (분)",
-   "read_only": 1
+   "label": "예상 소요시간 (분)"
   },
   {
    "fieldname": "section_break_15",
    "fieldtype": "Section Break",
-   "label": "작업 요약"
+   "label": "반복 설정"
   },
   {
-   "fieldname": "work_summary",
-   "fieldtype": "Text",
-   "label": "작업 요약",
-   "read_only": 1
+   "fieldname": "recurrence_type",
+   "fieldtype": "Select",
+   "label": "반복 유형",
+   "options": "None\nDaily\nWeekly\nMonthly",
+   "default": "None"
   },
   {
-   "fieldname": "completion_details",
-   "fieldtype": "Text",
-   "label": "완료 상세",
-   "read_only": 1
+   "fieldname": "recurrence_days",
+   "fieldtype": "Select",
+   "label": "반복 요일",
+   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+   "depends_on": "eval:doc.recurrence_type=='Weekly'"
   },
   {
-   "fieldname": "section_break_18",
-   "fieldtype": "Section Break",
-   "label": "완료 통계"
-  },
-  {
-   "fieldname": "total_items",
-   "fieldtype": "Int",
-   "label": "총 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "completed_items",
-   "fieldtype": "Int",
-   "label": "완료 항목수",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_21",
+   "fieldname": "column_break_18",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "completion_rate",
-   "fieldtype": "Percent",
-   "label": "완료율",
-   "read_only": 1
-  },
-  {
-   "fieldname": "section_break_24",
-   "fieldtype": "Section Break",
-   "label": "발송 정보"
-  },
-  {
-   "fieldname": "report_status",
+   "fieldname": "assignment_status",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "보고서 상태",
-   "options": "Draft\nSent\nDelivered",
-   "default": "Draft",
+   "label": "할당 상태",
+   "options": "Assigned\nIn Progress\nCompleted\nCancelled",
+   "default": "Assigned",
    "reqd": 1
   },
   {
-   "fieldname": "sent_date",
-   "fieldtype": "Datetime",
-   "label": "발송일",
-   "read_only": 1
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "비고"
   },
   {
-   "fieldname": "column_break_27",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "attachments",
+   "fieldname": "notes",
    "fieldtype": "Text",
-   "label": "첨부파일",
-   "read_only": 1
+   "label": "비고"
   },
   {
-   "fieldname": "section_break_29",
+   "fieldname": "section_break_23",
    "fieldtype": "Section Break",
    "label": "시스템 정보"
   },
@@ -218,7 +174,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_32",
+   "fieldname": "column_break_26",
    "fieldtype": "Column Break"
   },
   {
@@ -244,11 +200,11 @@
  "is_submittable": 0,
  "issingle": 0,
  "istable": 0,
- "max_attachments": 10,
+ "max_attachments": 5,
  "modified": "2025-07-09 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "WeBiz",
- "name": "Work Report",
+ "name": "Work Assignment",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -307,7 +263,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "report_name",
+ "title_field": "assignment_name",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

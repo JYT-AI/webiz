@@ -1,0 +1,459 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_events_in_timeline": 1,
+ "allow_guest_to_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "beta": 0,
+ "creation": "2025-07-09 00:00:00.000000",
+ "custom": 0,
+ "docstatus": 0,
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "report_title",
+  "work_site",
+  "project",
+  "column_break_4",
+  "report_date",
+  "report_type",
+  "status",
+  "section_break_8",
+  "prepared_by",
+  "reviewed_by",
+  "approved_by",
+  "column_break_12",
+  "work_start_date",
+  "work_end_date",
+  "total_work_hours",
+  "section_break_16",
+  "work_summary",
+  "work_description",
+  "section_break_19",
+  "completed_checklists",
+  "section_break_21",
+  "worker_attendance_summary",
+  "total_workers",
+  "total_attendance_hours",
+  "column_break_25",
+  "overtime_hours",
+  "break_hours",
+  "efficiency_rating",
+  "section_break_29",
+  "materials_used",
+  "equipment_used",
+  "section_break_32",
+  "issues_encountered",
+  "safety_incidents",
+  "quality_issues",
+  "section_break_36",
+  "recommendations",
+  "next_steps",
+  "section_break_39",
+  "photos",
+  "attachments",
+  "section_break_42",
+  "customer_feedback",
+  "customer_signature",
+  "column_break_45",
+  "supervisor_comments",
+  "supervisor_signature",
+  "section_break_48",
+  "created_by",
+  "created_date",
+  "column_break_51",
+  "modified_by",
+  "modified_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WR-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "report_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Report Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_site",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Work Site",
+   "options": "Work Site",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Report Date",
+   "reqd": 1
+  },
+  {
+   "default": "Daily",
+   "fieldname": "report_type",
+   "fieldtype": "Select",
+   "label": "Report Type",
+   "options": "Daily\nWeekly\nMonthly\nProject Completion\nIncident\nQuality\nSafety"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nUnder Review\nApproved\nSubmitted\nRejected"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Report Information"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_start_date",
+   "fieldtype": "Date",
+   "label": "Work Start Date"
+  },
+  {
+   "fieldname": "work_end_date",
+   "fieldtype": "Date",
+   "label": "Work End Date"
+  },
+  {
+   "fieldname": "total_work_hours",
+   "fieldtype": "Float",
+   "label": "Total Work Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Work Summary"
+  },
+  {
+   "fieldname": "work_summary",
+   "fieldtype": "Text Editor",
+   "label": "Work Summary"
+  },
+  {
+   "fieldname": "work_description",
+   "fieldtype": "Text",
+   "label": "Detailed Work Description"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Completed Checklists"
+  },
+  {
+   "fieldname": "completed_checklists",
+   "fieldtype": "Table MultiSelect",
+   "label": "Completed Checklists",
+   "options": "Work Checklist"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Worker Attendance"
+  },
+  {
+   "fieldname": "worker_attendance_summary",
+   "fieldtype": "Text",
+   "label": "Worker Attendance Summary",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_workers",
+   "fieldtype": "Int",
+   "label": "Total Workers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_attendance_hours",
+   "fieldtype": "Float",
+   "label": "Total Attendance Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "break_hours",
+   "fieldtype": "Float",
+   "label": "Break Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "efficiency_rating",
+   "fieldtype": "Rating",
+   "label": "Efficiency Rating"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "Resources Used"
+  },
+  {
+   "fieldname": "materials_used",
+   "fieldtype": "Text",
+   "label": "Materials Used"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Text",
+   "label": "Equipment Used"
+  },
+  {
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break",
+   "label": "Issues & Incidents"
+  },
+  {
+   "fieldname": "issues_encountered",
+   "fieldtype": "Text",
+   "label": "Issues Encountered"
+  },
+  {
+   "fieldname": "safety_incidents",
+   "fieldtype": "Text",
+   "label": "Safety Incidents"
+  },
+  {
+   "fieldname": "quality_issues",
+   "fieldtype": "Text",
+   "label": "Quality Issues"
+  },
+  {
+   "fieldname": "section_break_36",
+   "fieldtype": "Section Break",
+   "label": "Recommendations & Next Steps"
+  },
+  {
+   "fieldname": "recommendations",
+   "fieldtype": "Text",
+   "label": "Recommendations"
+  },
+  {
+   "fieldname": "next_steps",
+   "fieldtype": "Text",
+   "label": "Next Steps"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "photos",
+   "fieldtype": "Table MultiSelect",
+   "label": "Photos",
+   "options": "File"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table MultiSelect",
+   "label": "Documents",
+   "options": "File"
+  },
+  {
+   "fieldname": "section_break_42",
+   "fieldtype": "Section Break",
+   "label": "Approvals & Signatures"
+  },
+  {
+   "fieldname": "customer_feedback",
+   "fieldtype": "Text",
+   "label": "Customer Feedback"
+  },
+  {
+   "fieldname": "customer_signature",
+   "fieldtype": "Signature",
+   "label": "Customer Signature"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervisor_comments",
+   "fieldtype": "Text",
+   "label": "Supervisor Comments"
+  },
+  {
+   "fieldname": "supervisor_signature",
+   "fieldtype": "Signature",
+   "label": "Supervisor Signature"
+  },
+  {
+   "fieldname": "section_break_48",
+   "fieldtype": "Section Break",
+   "label": "System Information"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Datetime",
+   "label": "Created Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_51",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "Modified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "modified_date",
+   "fieldtype": "Datetime",
+   "label": "Modified Date",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 1,
+ "hide_heading": 0,
+ "hide_toolbar": 0,
+ "idx": 0,
+ "image_view": 0,
+ "in_create": 0,
+ "is_submittable": 1,
+ "issingle": 0,
+ "istable": 0,
+ "max_attachments": 50,
+ "modified": "2025-07-09 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Report",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Work Supervisor",
+   "share": 0,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Worker",
+   "share": 0,
+   "submit": 0,
+   "write": 1
+  }
+ ],
+ "quick_entry": 0,
+ "restrict_to_domain": "",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "report_title",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
