@@ -38,7 +38,17 @@ class SiteSchedule(Document):
         # Check if work site exists
         if not frappe.db.exists("Work Site", self.work_site):
             frappe.throw(_("Work Site {0} does not exist").format(self.work_site))
-        
+
+        # Check if work area exists and belongs to the work site
+        if self.work_area:
+            if not frappe.db.exists("Work Area", self.work_area):
+                frappe.throw(_("Work Area {0} does not exist").format(self.work_area))
+
+            # Verify work area belongs to the selected work site
+            area_work_site = frappe.db.get_value("Work Area", self.work_area, "work_site")
+            if area_work_site != self.work_site:
+                frappe.throw(_("Work Area {0} does not belong to Work Site {1}").format(self.work_area, self.work_site))
+
         # Check for scheduling conflicts
         self.check_scheduling_conflicts()
     

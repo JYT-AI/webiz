@@ -8,6 +8,12 @@ from frappe import _
 
 
 class WorkReport(Document):
+    # Website configuration for web view functionality
+    website = frappe._dict(
+        condition_field="status",  # Field to check for publishing condition
+        page_title_field="report_title"  # Field to use as page title
+    )
+
     def before_insert(self):
         """Set default values before inserting"""
         self.created_by = frappe.session.user

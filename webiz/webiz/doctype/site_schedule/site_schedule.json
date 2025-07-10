@@ -22,6 +22,7 @@
   "column_break_4",
   "work_site",
   "site_name",
+  "work_area",
   "customer",
   "section_break_8",
   "scheduled_date",
@@ -110,6 +111,12 @@
    "fieldtype": "Data",
    "label": "Site Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "work_area",
+   "fieldtype": "Link",
+   "label": "Work Area",
+   "options": "Work Area"
   },
   {
    "fetch_from": "work_site.customer",

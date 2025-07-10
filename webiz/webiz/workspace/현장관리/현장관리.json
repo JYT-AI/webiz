@@ -1,15 +1,6 @@
 {
  "app": "webiz",
- "charts": [
-  {
-   "chart_name": "Work Site Status",
-   "label": "현장별 작업 현황"
-  },
-  {
-   "chart_name": "Worker Attendance",
-   "label": "작업자 출근 현황"
-  }
- ],
+ "charts": [],
  "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"현장 관리 시스템 - 직원 스케줄부터 현장 업무 완료까지 통합 관리\",\"col\":12}},{\"id\":\"spacer_1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"현장 관리\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"직원 스케줄\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"체크리스트\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"현장 보고서\",\"col\":4}},{\"id\":\"card_5\",\"type\":\"card\",\"data\":{\"card_name\":\"모니터링\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"설정\",\"col\":4}}]",
  "creation": "2025-07-09 00:00:00.000000",
  "custom_blocks": [],
@@ -224,48 +215,15 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "모니터링",
-   "link_count": 3,
+   "link_count": 0,
    "onboard": 0,
    "type": "Card Break"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Site Summary",
-   "link_count": 0,
-   "link_to": "Work Site Summary",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Worker Attendance Report",
-   "link_count": 0,
-   "link_to": "Worker Attendance Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Progress Report",
-   "link_count": 0,
-   "link_to": "Work Progress Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
    "label": "설정",
-   "link_count": 4,
+   "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -291,17 +249,7 @@
    "onboard": 0,
    "type": "Link"
   },
-  {
-   "dependencies": "",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Work Management Settings",
-   "link_count": 0,
-   "link_to": "Work Management Settings",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
+
   {
    "dependencies": "",
    "hidden": 0,
