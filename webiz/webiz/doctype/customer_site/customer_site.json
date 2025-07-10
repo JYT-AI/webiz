@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-12-19 10:00:00",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "site_name",
+  "test_label",
+  "customer",
+  "customer_name",
+  "column_break_1",
+  "status",
+  "site_type",
+  "priority",
+  "section_break_address",
+  "address_line1",
+  "address_line2",
+  "city",
+  "state",
+  "column_break_address",
+  "country",
+  "pincode",
+  "phone",
+  "email",
+  "section_break_details",
+  "site_description",
+  "operating_hours",
+  "column_break_details",
+  "contact_person",
+  "contact_phone",
+  "special_instructions",
+  "section_break_facility",
+  "total_area",
+  "floor_count",
+  "column_break_facility",
+  "facility_type",
+  "access_requirements",
+  "safety_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SITE-.YYYY.-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Site Name",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nUnder Maintenance\nClosed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Site Type",
+   "options": "Office Building\nFactory\nWarehouse\nRetail Store\nHospital\nSchool\nHotel\nResidential\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_address",
+   "fieldtype": "Section Break",
+   "label": "Address Information"
+  },
+  {
+   "fieldname": "address_line1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State/Province"
+  },
+  {
+   "fieldname": "column_break_address",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "Site Details"
+  },
+  {
+   "fieldname": "site_description",
+   "fieldtype": "Text",
+   "label": "Site Description"
+  },
+  {
+   "fieldname": "operating_hours",
+   "fieldtype": "Data",
+   "label": "Operating Hours"
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Text",
+   "label": "Special Instructions"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_facility",
+   "fieldtype": "Section Break",
+   "label": "Facility Information"
+  },
+  {
+   "fieldname": "total_area",
+   "fieldtype": "Float",
+   "label": "Total Area (sq ft)"
+  },
+  {
+   "fieldname": "floor_count",
+   "fieldtype": "Int",
+   "label": "Number of Floors"
+  },
+  {
+   "fieldname": "column_break_facility",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "facility_type",
+   "fieldtype": "Select",
+   "label": "Facility Type",
+   "options": "Indoor\nOutdoor\nMixed"
+  },
+  {
+   "fieldname": "access_requirements",
+   "fieldtype": "Text",
+   "label": "Access Requirements"
+  },
+  {
+   "fieldname": "safety_notes",
+   "fieldtype": "Text",
+   "label": "Safety Notes"
+  },
+  {
+   "fieldname": "test_label",
+   "fieldtype": "Data",
+   "label": "Test Label"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-10 17:37:40.081713",
+ "modified_by": "gwh@jyt.ai",
+ "module": "WeBiz",
+ "name": "Customer Site",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Facility Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Facility User",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "site_name",
+ "track_changes": 1
+}
