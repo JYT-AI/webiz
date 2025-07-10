@@ -1,8 +1,8 @@
 {
  "app": "webiz",
  "charts": [],
- "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"FM 문서 및 지식 관리 - 문서 저장부터 지식 공유까지\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"파일 관리\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"커뮤니케이션\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"템플릿 관리\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"지식 관리\",\"col\":4}},{\"id\":\"card_5\",\"type\":\"card\",\"data\":{\"card_name\":\"보고서\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"설정\",\"col\":4}}]",
- "creation": "2025-07-01 17:00:00.000000",
+ "content": "[{\"id\":\"paragraph_1\",\"type\":\"paragraph\",\"data\":{\"text\":\"FM \ubb38\uc11c \ubc0f \uc9c0\uc2dd \uad00\ub9ac - \ubb38\uc11c \uc800\uc7a5\ubd80\ud130 \uc9c0\uc2dd \uacf5\uc720\uae4c\uc9c0\",\"col\":12}},{\"id\":\"card_1\",\"type\":\"card\",\"data\":{\"card_name\":\"\ud30c\uc77c \uad00\ub9ac\",\"col\":4}},{\"id\":\"card_2\",\"type\":\"card\",\"data\":{\"card_name\":\"\ucee4\ubba4\ub2c8\ucf00\uc774\uc158\",\"col\":4}},{\"id\":\"card_3\",\"type\":\"card\",\"data\":{\"card_name\":\"\ud15c\ud50c\ub9bf \uad00\ub9ac\",\"col\":4}},{\"id\":\"card_4\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc9c0\uc2dd \uad00\ub9ac\",\"col\":4}},{\"id\":\"card_6\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc124\uc815\",\"col\":4}}]",
+ "creation": "2025-07-01 17:00:00",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -12,12 +12,12 @@
  "idx": 0,
  "indicator_color": "cyan",
  "is_hidden": 0,
- "label": "문서관리",
+ "label": "\ubb38\uc11c\uad00\ub9ac",
  "links": [
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "파일 관리",
+   "label": "\ud30c\uc77c \uad00\ub9ac",
    "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
@@ -33,7 +33,6 @@
    "onboard": 1,
    "type": "Link"
   },
-
   {
    "dependencies": "",
    "hidden": 0,
@@ -59,7 +58,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "커뮤니케이션",
+   "label": "\ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
    "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
@@ -111,7 +110,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "템플릿 관리",
+   "label": "\ud15c\ud50c\ub9bf \uad00\ub9ac",
    "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
@@ -163,7 +162,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "지식 관리",
+   "label": "\uc9c0\uc2dd \uad00\ub9ac",
    "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
@@ -204,18 +203,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "보고서",
-   "link_count": 0,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-
-
-
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "설정",
+   "label": "\uc124\uc815",
    "link_count": 3,
    "onboard": 0,
    "type": "Card Break"
@@ -254,10 +242,10 @@
    "type": "Link"
   }
  ],
- "modified": "2025-07-01 17:00:00.000000",
- "modified_by": "Administrator",
+ "modified": "2025-07-10 16:54:22.984188",
+ "modified_by": "gwh@jyt.ai",
  "module": "WeBiz",
- "name": "문서관리",
+ "name": "\ubb38\uc11c\uad00\ub9ac",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -266,32 +254,7 @@
  "restrict_to_domain": "",
  "roles": [],
  "sequence_id": 6.0,
- "shortcuts": [
-  {
-   "color": "Blue",
-   "format": "{} Files",
-   "label": "File",
-   "link_to": "File",
-   "stats_filter": "{\"is_folder\":0}",
-   "type": "DocType"
-  },
-  {
-   "color": "Green",
-   "format": "{} Public",
-   "label": "Note",
-   "link_to": "Note",
-   "stats_filter": "{\"public\":1}",
-   "type": "DocType"
-  },
-  {
-   "color": "Orange",
-   "format": "{} Open",
-   "label": "ToDo",
-   "link_to": "ToDo",
-   "stats_filter": "{\"status\":\"Open\"}",
-   "type": "DocType"
-  }
- ],
- "title": "문서관리",
+ "shortcuts": [],
+ "title": "\ubb38\uc11c\uad00\ub9ac",
  "type": "Workspace"
 }

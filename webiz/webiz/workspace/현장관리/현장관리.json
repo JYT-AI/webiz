@@ -1,0 +1,62 @@
+{
+ "app": "webiz",
+ "charts": [],
+ "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc791\uc5c5 \ud604\uc7a5 \uad00\ub9ac \ubc0f \uc791\uc5c5 \ud604\ud669</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\ud604\uc7a5\uad00\ub9ac\",\"col\":4}}]",
+ "creation": "2025-07-10 15:36:58.226719",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mark-as-read",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "\ud604\uc7a5\uad00\ub9ac",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ud604\uc7a5\uad00\ub9ac",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uace0\uac1d",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uacc4\uc57d",
+   "link_count": 0,
+   "link_to": "Contract",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-07-10 16:35:48.348464",
+ "modified_by": "gwh@jyt.ai",
+ "module": "WeBiz",
+ "name": "\ud604\uc7a5\uad00\ub9ac",
+ "number_cards": [],
+ "owner": "gwh@jyt.ai",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 31.0,
+ "shortcuts": [],
+ "title": "\ud604\uc7a5\uad00\ub9ac",
+ "type": "Workspace"
+}
