@@ -2,6 +2,15 @@
 // Copyright (c) 2025, JYT AI and contributors
 
 frappe.provide('webiz.site_management');
+frappe.provide('webiz.work_management');
+
+// Ensure webiz.work_management is properly initialized
+if (typeof webiz === 'undefined') {
+    window.webiz = {};
+}
+if (typeof webiz.work_management === 'undefined') {
+    webiz.work_management = {};
+}
 
 // Offline support functionality
 webiz.site_management.offline = {
