@@ -13,6 +13,13 @@ app_license = "Proprietary"
 
 required_apps = ["erpnext"]
 
+fixtures = [
+    {
+        "dt": "Workspace",
+        "filters": [["app", "in", ["webiz"]]]
+    }
+]
+
 # Each item in the list will be shown as an app in the apps page
 add_to_apps_screen = [
 	{
