@@ -38,11 +38,6 @@ add_to_apps_screen = [
 after_install = "webiz.install.after_install"
 
 
-# Include JS and CSS files
-app_include_js = [
-    "/assets/webiz/js/work_management.js"
-]
-
 # Request hooks to inject global sidebar
 after_request = ["webiz.hooks.inject_global_sidebar"]
 
