@@ -5,7 +5,11 @@ frappe.ui.form.on('Facility Checklist Template', {
 	refresh(frm) {
 		frm.trigger('setup_buttons');
 		frm.trigger('set_created_by');
-		frm.trigger('setup_checklist_grid');
+
+		// Setup grid after a short delay to ensure it's initialized
+		setTimeout(() => {
+			frm.trigger('setup_checklist_grid');
+		}, 100);
 	},
 
 	setup_buttons(frm) {
@@ -103,11 +107,26 @@ frappe.ui.form.on('Facility Checklist Template', {
 	},
 
 	setup_checklist_grid(frm) {
-		// Customize checklist items grid
-		frm.fields_dict.checklist_items.grid.get_field('item_sequence').df.columns = 1;
-		frm.fields_dict.checklist_items.grid.get_field('item_title').df.columns = 3;
-		frm.fields_dict.checklist_items.grid.get_field('item_type').df.columns = 2;
-		frm.fields_dict.checklist_items.grid.get_field('is_mandatory').df.columns = 1;
+		// Customize checklist items grid - check if grid exists first
+		if (frm.fields_dict.checklist_items && frm.fields_dict.checklist_items.grid) {
+			try {
+				let grid = frm.fields_dict.checklist_items.grid;
+				if (grid.get_field('item_sequence')) {
+					grid.get_field('item_sequence').df.columns = 1;
+				}
+				if (grid.get_field('item_title')) {
+					grid.get_field('item_title').df.columns = 3;
+				}
+				if (grid.get_field('item_type')) {
+					grid.get_field('item_type').df.columns = 2;
+				}
+				if (grid.get_field('is_mandatory')) {
+					grid.get_field('is_mandatory').df.columns = 1;
+				}
+			} catch (e) {
+				console.log('Grid customization will be applied when grid is ready');
+			}
+		}
 	},
 
 	facility_type(frm) {

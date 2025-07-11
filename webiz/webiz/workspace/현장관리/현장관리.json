@@ -1,7 +1,7 @@
 {
  "app": "webiz",
  "charts": [],
- "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc791\uc5c5 \ud604\uc7a5 \uad00\ub9ac \ubc0f \uc791\uc5c5 \ud604\ud669</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\uace0\uac1d \uc815\ubcf4\",\"col\":4}},{\"id\":\"-9oE5ajg0Y\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc791\uc5c5 \uad00\ub9ac\",\"col\":4}}]",
+ "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc2dc\uc124 \uad00\ub9ac \uc2dc\uc2a4\ud15c</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc791\uc5c5\uc790 \uc804\uc6a9\",\"col\":4}},{\"id\":\"-9oE5ajg0Y\",\"type\":\"card\",\"data\":{\"card_name\":\"\uad00\ub9ac\uc790 \uc804\uc6a9\",\"col\":4}},{\"id\":\"mN8pQ2rX1Z\",\"type\":\"card\",\"data\":{\"card_name\":\"\uacf5\ud1b5 \uc0ac\uc6a9\",\"col\":4}}]",
  "creation": "2025-07-10 15:36:58.226719",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,8 +18,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uace0\uac1d \uc815\ubcf4",
-   "link_count": 3,
+   "label": "\uc791\uc5c5\uc790 \uc804\uc6a9",
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -27,9 +27,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uace0\uac1d",
+   "label": "\ub0b4 \uc791\uc5c5 \ubaa9\ub85d",
    "link_count": 0,
-   "link_to": "Customer",
+   "link_to": "Task",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -37,9 +37,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uacc4\uc57d",
+   "label": "\ub0b4 \uadfc\ud0dc \uae30\ub85d",
    "link_count": 0,
-   "link_to": "Contract",
+   "link_to": "Attendance",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -47,7 +47,17 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uace0\uac1d \uc0ac\uc774\ud2b8",
+   "label": "\uc791\uc5c4 \uc2dc\uac04 \uae30\ub85d",
+   "link_count": 0,
+   "link_to": "Timesheet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uc791\uc5c5 \uc0ac\uc774\ud2b8 \uc815\ubcf4",
    "link_count": 0,
    "link_to": "Customer Site",
    "link_type": "DocType",
@@ -57,11 +67,31 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uc791\uc5c5 \uad00\ub9ac",
-   "link_count": 1,
+   "label": "\uad00\ub9ac\uc790 \uc804\uc6a9",
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ud504\ub85c\uc81d\ud2b8 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uc791\uc5c5 \ubc30\uc815 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Task",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "hidden": 0,
@@ -72,9 +102,98 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uc9c1\uc6d0 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uace0\uac1d \uc0ac\uc774\ud2b8 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Customer Site",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uadfc\ud0dc \ud604\ud669",
+   "link_count": 0,
+   "link_to": "Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ubc18\ubcf5 \uc791\uc5c5 \uc124\uc815",
+   "link_count": 0,
+   "link_to": "Auto Repeat",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
+   "link_count": 0,
+   "link_to": "Communication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uacf5\ud1b5 \uc0ac\uc6a9",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uace0\uac1d \uc815\ubcf4",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uacc4\uc57d \uc815\ubcf4",
+   "link_count": 0,
+   "link_to": "Contract",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
+   "link_count": 0,
+   "link_to": "Communication",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-07-11 14:59:13.425732",
+ "modified": "2025-07-11 16:00:58.853016",
  "modified_by": "gwh@jyt.ai",
  "module": "WeBiz",
  "name": "\ud604\uc7a5\uad00\ub9ac",

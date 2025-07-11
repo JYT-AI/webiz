@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "creation": "2024-12-19 11:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_sequence",
+  "checklist_item_title",
+  "item_type",
+  "column_break_1",
+  "result_status",
+  "is_mandatory",
+  "section_break_result",
+  "result_value",
+  "result_notes",
+  "column_break_result",
+  "result_photo",
+  "completed_time",
+  "section_break_reference",
+  "template_item_reference",
+  "expected_result"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_sequence",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "순서",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "체크리스트 항목",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "항목 유형",
+   "options": "Check\nMeasurement\nPhoto\nSignature\nText Input\nMultiple Choice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "미완료",
+   "fieldname": "result_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "완료 상태",
+   "options": "미완료\n완료\n부분완료\n해당없음\n문제발생",
+   "reqd": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "label": "필수 항목"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.item_type != 'Check'",
+   "fieldname": "section_break_result",
+   "fieldtype": "Section Break",
+   "label": "수행 결과"
+  },
+  {
+   "depends_on": "eval:doc.item_type == 'Multiple Choice' || doc.item_type == 'Text Input' || doc.item_type == 'Measurement'",
+   "fieldname": "result_value",
+   "fieldtype": "Text",
+   "label": "결과 값"
+  },
+  {
+   "fieldname": "result_notes",
+   "fieldtype": "Text",
+   "label": "특이사항/메모"
+  },
+  {
+   "fieldname": "column_break_result",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.item_type == 'Photo' || doc.item_type == 'Signature'",
+   "fieldname": "result_photo",
+   "fieldtype": "Attach",
+   "label": "첨부 파일"
+  },
+  {
+   "fieldname": "completed_time",
+   "fieldtype": "Datetime",
+   "label": "완료 시간"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_reference",
+   "fieldtype": "Section Break",
+   "label": "참조 정보"
+  },
+  {
+   "fieldname": "template_item_reference",
+   "fieldtype": "Data",
+   "label": "템플릿 항목 참조",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expected_result",
+   "fieldtype": "Text",
+   "label": "기대 결과",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-19 11:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Timesheet Checklist Result",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
