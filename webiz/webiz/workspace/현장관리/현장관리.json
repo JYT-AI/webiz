@@ -1,7 +1,7 @@
 {
  "app": "webiz",
  "charts": [],
- "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc791\uc5c5 \ud604\uc7a5 \uad00\ub9ac \ubc0f \uc791\uc5c5 \ud604\ud669</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\ud604\uc7a5\uad00\ub9ac\",\"col\":4}}]",
+ "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc791\uc5c5 \ud604\uc7a5 \uad00\ub9ac \ubc0f \uc791\uc5c5 \ud604\ud669</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\uace0\uac1d \uc815\ubcf4\",\"col\":4}},{\"id\":\"-9oE5ajg0Y\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc791\uc5c5 \uad00\ub9ac\",\"col\":4}}]",
  "creation": "2025-07-10 15:36:58.226719",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,8 +18,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\ud604\uc7a5\uad00\ub9ac",
-   "link_count": 2,
+   "label": "\uace0\uac1d \uc815\ubcf4",
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -43,9 +43,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uace0\uac1d \uc0ac\uc774\ud2b8",
+   "link_count": 0,
+   "link_to": "Customer Site",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uc791\uc5c5 \uad00\ub9ac",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\uccb4\ud06c\ub9ac\uc2a4\ud2b8 \ud15c\ud50c\ub9bf",
+   "link_count": 0,
+   "link_to": "Facility Checklist Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-07-10 16:35:48.348464",
+ "modified": "2025-07-11 14:59:13.425732",
  "modified_by": "gwh@jyt.ai",
  "module": "WeBiz",
  "name": "\ud604\uc7a5\uad00\ub9ac",

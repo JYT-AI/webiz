@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "creation": "2024-12-19 10:35:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_sequence",
+  "item_title",
+  "column_break_1",
+  "item_type",
+  "is_mandatory",
+  "section_break_details",
+  "description",
+  "expected_result",
+  "column_break_details",
+  "tools_required",
+  "estimated_time",
+  "section_break_options",
+  "check_options"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_sequence",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Sequence",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Check",
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Item Type",
+   "options": "Check\nMeasurement\nPhoto\nSignature\nText Input\nMultiple Choice",
+   "reqd": 1
+  },
+  {
+   "default": 1,
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Mandatory"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "expected_result",
+   "fieldtype": "Text",
+   "label": "Expected Result"
+  },
+  {
+   "fieldname": "column_break_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tools_required",
+   "fieldtype": "Text",
+   "label": "Tools Required"
+  },
+  {
+   "fieldname": "estimated_time",
+   "fieldtype": "Float",
+   "label": "Estimated Time (minutes)",
+   "precision": "1"
+  },
+  {
+   "depends_on": "eval:doc.item_type=='Multiple Choice'",
+   "fieldname": "section_break_options",
+   "fieldtype": "Section Break",
+   "label": "Multiple Choice Options"
+  },
+  {
+   "depends_on": "eval:doc.item_type=='Multiple Choice'",
+   "fieldname": "check_options",
+   "fieldtype": "Text",
+   "label": "Options (one per line)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-19 10:35:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Facility Checklist Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
