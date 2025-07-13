@@ -1,0 +1,324 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "work_task",
+  "work_project",
+  "timesheet",
+  "column_break_basic",
+  "status",
+  "work_date",
+  "priority",
+  "facility_work_section",
+  "customer_site",
+  "checklist_template",
+  "assigned_employee",
+  "employee_name",
+  "column_break_work",
+  "scheduled_start_time",
+  "estimated_duration",
+  "actual_start_time",
+  "actual_end_time",
+  "time_tracking_section",
+  "check_in_time",
+  "check_out_time",
+  "actual_duration",
+  "break_duration",
+  "column_break_time",
+  "overtime_hours",
+  "total_billable_hours",
+  "checklist_section",
+  "checklist_results",
+  "completion_section",
+  "completion_photos",
+  "quality_rating",
+  "customer_feedback",
+  "column_break_completion",
+  "special_notes",
+  "next_recommendations",
+  "customer_signature",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WS-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Work Session Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_task",
+   "fieldtype": "Link",
+   "label": "Work Task",
+   "options": "Work Task",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "work_task.work_project",
+   "fieldname": "work_project",
+   "fieldtype": "Link",
+   "label": "Work Project",
+   "options": "Work Project",
+   "read_only": 1
+  },
+  {
+   "fieldname": "timesheet",
+   "fieldtype": "Link",
+   "label": "Timesheet",
+   "options": "Timesheet"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\nIn Progress\nCompleted\nCancelled\nOn Hold\nOverdue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_date",
+   "fieldtype": "Date",
+   "label": "Work Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "facility_work_section",
+   "fieldtype": "Section Break",
+   "label": "시설 작업 정보"
+  },
+  {
+   "fetch_from": "work_task.customer_site",
+   "fieldname": "customer_site",
+   "fieldtype": "Link",
+   "label": "작업 사이트",
+   "options": "Customer Site",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_task.checklist_template",
+   "fieldname": "checklist_template",
+   "fieldtype": "Link",
+   "label": "체크리스트 템플릿",
+   "options": "Facility Checklist Template",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_task.assigned_employee",
+   "fieldname": "assigned_employee",
+   "fieldtype": "Link",
+   "label": "담당 직원",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "assigned_employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "직원명",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_work",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scheduled_start_time",
+   "fieldtype": "Datetime",
+   "label": "예정 시작 시간"
+  },
+  {
+   "fetch_from": "work_task.estimated_duration",
+   "fieldname": "estimated_duration",
+   "fieldtype": "Float",
+   "label": "예상 소요시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_start_time",
+   "fieldtype": "Datetime",
+   "label": "실제 시작 시간"
+  },
+  {
+   "fieldname": "actual_end_time",
+   "fieldtype": "Datetime",
+   "label": "실제 종료 시간"
+  },
+  {
+   "fieldname": "time_tracking_section",
+   "fieldtype": "Section Break",
+   "label": "시간 추적"
+  },
+  {
+   "fieldname": "check_in_time",
+   "fieldtype": "Datetime",
+   "label": "체크인 시간"
+  },
+  {
+   "fieldname": "check_out_time",
+   "fieldtype": "Datetime",
+   "label": "체크아웃 시간"
+  },
+  {
+   "fieldname": "actual_duration",
+   "fieldtype": "Float",
+   "label": "실제 소요시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "break_duration",
+   "fieldtype": "Float",
+   "label": "휴게시간 (시간)",
+   "precision": 2
+  },
+  {
+   "fieldname": "column_break_time",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "초과근무시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_billable_hours",
+   "fieldtype": "Float",
+   "label": "청구 가능 시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "checklist_section",
+   "fieldtype": "Section Break",
+   "label": "체크리스트 수행 결과"
+  },
+  {
+   "fieldname": "checklist_results",
+   "fieldtype": "Table",
+   "label": "체크리스트 결과",
+   "options": "Timesheet Checklist Result"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "completion_section",
+   "fieldtype": "Section Break",
+   "label": "작업 완료 정보"
+  },
+  {
+   "fieldname": "completion_photos",
+   "fieldtype": "Attach",
+   "label": "완료 사진"
+  },
+  {
+   "fieldname": "quality_rating",
+   "fieldtype": "Select",
+   "label": "품질 평가",
+   "options": "1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "customer_feedback",
+   "fieldtype": "Text",
+   "label": "고객 피드백"
+  },
+  {
+   "fieldname": "column_break_completion",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "special_notes",
+   "fieldtype": "Text",
+   "label": "특이사항"
+  },
+  {
+   "fieldname": "next_recommendations",
+   "fieldtype": "Text",
+   "label": "다음 작업 권장사항"
+  },
+  {
+   "fieldname": "customer_signature",
+   "fieldtype": "Attach",
+   "label": "고객 서명 (선택사항)"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "상세 설명"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Session",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

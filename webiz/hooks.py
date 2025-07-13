@@ -17,6 +17,10 @@ fixtures = [
     {
         "dt": "Workspace",
         "filters": [["name", "=", "현장관리"]]
+    },
+    {
+        "dt": "DocType",
+        "filters": [["module", "=", "WeBiz"]]
     }
 ]
 

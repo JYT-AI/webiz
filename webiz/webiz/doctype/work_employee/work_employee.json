@@ -1,0 +1,283 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "column_break_basic",
+  "status",
+  "date_of_joining",
+  "mobile_no",
+  "email",
+  "facility_management_section",
+  "facility_skills",
+  "certification_info",
+  "work_areas",
+  "column_break_facility",
+  "mobile_device_id",
+  "emergency_contact",
+  "skill_level",
+  "hourly_rate",
+  "availability_section",
+  "available_days",
+  "preferred_shift",
+  "max_hours_per_day",
+  "column_break_availability",
+  "current_workload",
+  "last_work_date",
+  "total_work_sessions",
+  "performance_section",
+  "average_rating",
+  "total_ratings",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WE-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive\nOn Leave\nTerminated",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.cell_number",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "options": "Phone",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company_email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "facility_management_section",
+   "fieldtype": "Section Break",
+   "label": "시설 관리 정보"
+  },
+  {
+   "fieldname": "facility_skills",
+   "fieldtype": "Text",
+   "label": "시설 관리 기술"
+  },
+  {
+   "fieldname": "certification_info",
+   "fieldtype": "Text",
+   "label": "자격증 정보"
+  },
+  {
+   "fieldname": "work_areas",
+   "fieldtype": "Text",
+   "label": "작업 가능 지역"
+  },
+  {
+   "fieldname": "column_break_facility",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_device_id",
+   "fieldtype": "Data",
+   "label": "모바일 기기 ID"
+  },
+  {
+   "fieldname": "emergency_contact",
+   "fieldtype": "Data",
+   "label": "비상 연락처",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "skill_level",
+   "fieldtype": "Select",
+   "label": "기술 수준",
+   "options": "초급\n중급\n고급\n전문가"
+  },
+  {
+   "fieldname": "hourly_rate",
+   "fieldtype": "Currency",
+   "label": "시간당 급여"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "availability_section",
+   "fieldtype": "Section Break",
+   "label": "근무 가능 정보"
+  },
+  {
+   "fieldname": "available_days",
+   "fieldtype": "Select",
+   "label": "근무 가능 요일",
+   "options": "월-금\n월-토\n전체\n맞춤 설정"
+  },
+  {
+   "fieldname": "preferred_shift",
+   "fieldtype": "Select",
+   "label": "선호 근무 시간",
+   "options": "오전 (08:00-12:00)\n오후 (13:00-17:00)\n저녁 (18:00-22:00)\n야간 (22:00-06:00)\n전일 (08:00-17:00)"
+  },
+  {
+   "default": 8,
+   "fieldname": "max_hours_per_day",
+   "fieldtype": "Float",
+   "label": "일일 최대 근무시간",
+   "precision": 1
+  },
+  {
+   "fieldname": "column_break_availability",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "current_workload",
+   "fieldtype": "Int",
+   "label": "현재 배정된 작업 수",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_work_date",
+   "fieldtype": "Date",
+   "label": "마지막 작업일",
+   "read_only": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "total_work_sessions",
+   "fieldtype": "Int",
+   "label": "총 작업 세션 수",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "performance_section",
+   "fieldtype": "Section Break",
+   "label": "성과 정보"
+  },
+  {
+   "default": 0,
+   "fieldname": "average_rating",
+   "fieldtype": "Float",
+   "label": "평균 평점",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "total_ratings",
+   "fieldtype": "Int",
+   "label": "총 평가 수",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "특이사항"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Employee",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

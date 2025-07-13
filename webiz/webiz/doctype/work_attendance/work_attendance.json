@@ -1,0 +1,295 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-13 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "attendance",
+  "employee",
+  "employee_name",
+  "attendance_date",
+  "column_break_basic",
+  "status",
+  "shift",
+  "in_time",
+  "out_time",
+  "field_attendance_section",
+  "work_site",
+  "work_session",
+  "check_in_location",
+  "check_out_location",
+  "column_break_field",
+  "check_in_photo",
+  "check_out_photo",
+  "site_notes",
+  "location_verification_section",
+  "gps_accuracy",
+  "location_verified",
+  "distance_from_site",
+  "column_break_location",
+  "device_info",
+  "ip_address",
+  "verification_method",
+  "working_hours_section",
+  "total_working_hours",
+  "break_hours",
+  "overtime_hours",
+  "column_break_hours",
+  "early_entry",
+  "late_exit",
+  "attendance_score"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WA-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Link",
+   "label": "Attendance",
+   "options": "Attendance"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attendance_date",
+   "fieldtype": "Date",
+   "label": "Attendance Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Present\nAbsent\nHalf Day\nOn Leave\nWork From Home",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Link",
+   "label": "Shift",
+   "options": "Shift Type"
+  },
+  {
+   "fieldname": "in_time",
+   "fieldtype": "Datetime",
+   "label": "In Time"
+  },
+  {
+   "fieldname": "out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time"
+  },
+  {
+   "fieldname": "field_attendance_section",
+   "fieldtype": "Section Break",
+   "label": "현장 근태 정보"
+  },
+  {
+   "fieldname": "work_site",
+   "fieldtype": "Link",
+   "label": "작업 현장",
+   "options": "Customer Site"
+  },
+  {
+   "fieldname": "work_session",
+   "fieldtype": "Link",
+   "label": "Work Session",
+   "options": "Work Session"
+  },
+  {
+   "fieldname": "check_in_location",
+   "fieldtype": "Data",
+   "label": "체크인 위치 (GPS)"
+  },
+  {
+   "fieldname": "check_out_location",
+   "fieldtype": "Data",
+   "label": "체크아웃 위치 (GPS)"
+  },
+  {
+   "fieldname": "column_break_field",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_in_photo",
+   "fieldtype": "Attach",
+   "label": "출근 인증 사진"
+  },
+  {
+   "fieldname": "check_out_photo",
+   "fieldtype": "Attach",
+   "label": "퇴근 인증 사진"
+  },
+  {
+   "fieldname": "site_notes",
+   "fieldtype": "Text",
+   "label": "현장 특이사항"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "location_verification_section",
+   "fieldtype": "Section Break",
+   "label": "위치 검증 정보"
+  },
+  {
+   "fieldname": "gps_accuracy",
+   "fieldtype": "Float",
+   "label": "GPS 정확도 (미터)",
+   "precision": 2
+  },
+  {
+   "default": 0,
+   "fieldname": "location_verified",
+   "fieldtype": "Check",
+   "label": "위치 검증됨"
+  },
+  {
+   "fieldname": "distance_from_site",
+   "fieldtype": "Float",
+   "label": "현장으로부터 거리 (미터)",
+   "precision": 2
+  },
+  {
+   "fieldname": "column_break_location",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "device_info",
+   "fieldtype": "Data",
+   "label": "기기 정보"
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "label": "IP 주소"
+  },
+  {
+   "fieldname": "verification_method",
+   "fieldtype": "Select",
+   "label": "검증 방법",
+   "options": "GPS\nQR Code\nNFC\nManual\nPhoto Recognition"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "working_hours_section",
+   "fieldtype": "Section Break",
+   "label": "근무시간 정보"
+  },
+  {
+   "fieldname": "total_working_hours",
+   "fieldtype": "Float",
+   "label": "총 근무시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "default": 0,
+   "fieldname": "break_hours",
+   "fieldtype": "Float",
+   "label": "휴게시간 (시간)",
+   "precision": 2
+  },
+  {
+   "default": 0,
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "초과근무시간 (시간)",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hours",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 0,
+   "fieldname": "early_entry",
+   "fieldtype": "Check",
+   "label": "조기 출근"
+  },
+  {
+   "default": 0,
+   "fieldname": "late_exit",
+   "fieldtype": "Check",
+   "label": "늦은 퇴근"
+  },
+  {
+   "default": 100,
+   "fieldname": "attendance_score",
+   "fieldtype": "Int",
+   "label": "출석 점수",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Attendance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

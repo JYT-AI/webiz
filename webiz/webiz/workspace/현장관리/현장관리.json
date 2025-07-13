@@ -1,7 +1,7 @@
 {
  "app": "webiz",
  "charts": [],
- "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc2dc\uc124 \uad00\ub9ac \uc2dc\uc2a4\ud15c</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc791\uc5c5\uc790 \uc804\uc6a9\",\"col\":4}},{\"id\":\"-9oE5ajg0Y\",\"type\":\"card\",\"data\":{\"card_name\":\"\uad00\ub9ac\uc790 \uc804\uc6a9\",\"col\":4}},{\"id\":\"mN8pQ2rX1Z\",\"type\":\"card\",\"data\":{\"card_name\":\"\uacf5\ud1b5 \uc0ac\uc6a9\",\"col\":4}}]",
+ "content": "[{\"id\":\"v0HflG3mfD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\">\uc2dc\uc124 \uad00\ub9ac \uc2dc\uc2a4\ud15c</span>\",\"col\":12}},{\"id\":\"kGcAasifdA\",\"type\":\"card\",\"data\":{\"card_name\":\"\ud604\uc7a5 \uc791\uc5c5\uc790\",\"col\":3}},{\"id\":\"-9oE5ajg0Y\",\"type\":\"card\",\"data\":{\"card_name\":\"\uc2dc\uc124\uad00\ub9ac \uad00\ub9ac\uc790\",\"col\":3}},{\"id\":\"xR7kL9mP2Q\",\"type\":\"card\",\"data\":{\"card_name\":\"ERPNext \uc5f0\ub3d9\",\"col\":3}},{\"id\":\"mN8pQ2rX1Z\",\"type\":\"card\",\"data\":{\"card_name\":\"\uacf5\ud1b5 \uc0ac\uc6a9\",\"col\":3}}]",
  "creation": "2025-07-10 15:36:58.226719",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uc791\uc5c5\uc790 \uc804\uc6a9",
+   "label": "\ud604\uc7a5 \uc791\uc5c5\uc790",
    "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
@@ -27,9 +27,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\ub0b4 \uc791\uc5c5 \ubaa9\ub85d",
+   "label": "\ub0b4 \ud604\uc7a5 \uc791\uc5c5",
    "link_count": 0,
-   "link_to": "Task",
+   "link_to": "Work Session",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -37,9 +37,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\ub0b4 \uadfc\ud0dc \uae30\ub85d",
+   "label": "\ud604\uc7a5 \ucd9c\uc785 \uae30\ub85d",
    "link_count": 0,
-   "link_to": "Attendance",
+   "link_to": "Work Attendance",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -47,9 +47,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uc791\uc5c4 \uc2dc\uac04 \uae30\ub85d",
+   "label": "\uc791\uc5c5 \uc9c4\ud589 \ud604\ud669",
    "link_count": 0,
-   "link_to": "Timesheet",
+   "link_to": "Work Session",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -67,8 +67,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uad00\ub9ac\uc790 \uc804\uc6a9",
-   "link_count": 7,
+   "label": "\uc2dc\uc124\uad00\ub9ac \uad00\ub9ac\uc790",
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -76,9 +76,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\ud504\ub85c\uc81d\ud2b8 \uad00\ub9ac",
+   "label": "\uc2dc\uc124\uad00\ub9ac \ud504\ub85c\uc81d\ud2b8",
    "link_count": 0,
-   "link_to": "Project",
+   "link_to": "Work Project",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -86,12 +86,41 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uc791\uc5c5 \ubc30\uc815 \uad00\ub9ac",
+   "label": "\uc791\uc5c5 \uc9c0\uc2dc\uc11c",
    "link_count": 0,
-   "link_to": "Task",
+   "link_to": "Work Task",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ud604\uc7a5 \uc791\uc5c5\uc790 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Work Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\ud604\uc7a5 \ucd9c\uc785 \uad00\ub9ac",
+   "link_count": 0,
+   "link_to": "Work Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "ERPNext \uc5f0\ub3d9",
+   "link_count": 8,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
   },
   {
    "hidden": 0,
@@ -99,16 +128,6 @@
    "label": "\uccb4\ud06c\ub9ac\uc2a4\ud2b8 \ud15c\ud50c\ub9bf",
    "link_count": 0,
    "link_to": "Facility Checklist Template",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "\uc9c1\uc6d0 \uad00\ub9ac",
-   "link_count": 0,
-   "link_to": "Employee",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -126,16 +145,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\uadfc\ud0dc \ud604\ud669",
-   "link_count": 0,
-   "link_to": "Attendance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "\ubc18\ubcf5 \uc791\uc5c5 \uc124\uc815",
    "link_count": 0,
    "link_to": "Auto Repeat",
@@ -146,9 +155,49 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
+   "label": "Project",
    "link_count": 0,
-   "link_to": "Communication",
+   "link_to": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task",
+   "link_count": 0,
+   "link_to": "Task",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance",
+   "link_count": 0,
+   "link_to": "Attendance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timesheet",
+   "link_count": 0,
+   "link_to": "Timesheet",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -157,7 +206,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "\uacf5\ud1b5 \uc0ac\uc6a9",
-   "link_count": 3,
+   "link_count": 2,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -178,16 +227,6 @@
    "label": "\uacc4\uc57d \uc815\ubcf4",
    "link_count": 0,
    "link_to": "Contract",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "\ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
-   "link_count": 0,
-   "link_to": "Communication",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
