@@ -16,7 +16,7 @@ required_apps = ["erpnext"]
 fixtures = [
     {
         "dt": "Workspace",
-        "filters": [["app", "in", ["webiz"]]]
+        "filters": [["name", "=", "현장관리"]]
     }
 ]
 
