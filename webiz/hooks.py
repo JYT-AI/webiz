@@ -53,7 +53,8 @@ fixtures = [
         "dt": "Workspace",
         "filters": [["name", "=", "현장관리"]],
         "prefix": "facility"
-    }
+    },
+    "fixtures/task_custom_fields.json"
 ]
 
 # Each item in the list will be shown as an app in the apps page

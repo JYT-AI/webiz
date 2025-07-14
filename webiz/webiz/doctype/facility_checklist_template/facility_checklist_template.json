@@ -138,9 +138,9 @@
   },
   {
    "fieldname": "checklist_items",
-   "fieldtype": "Table",
-   "label": "Checklist Items",
-   "options": "Facility Checklist Item",
+   "fieldtype": "Text Editor",
+   "label": "체크리스트 항목",
+   "description": "각 항목을 한 줄씩 입력하세요",
    "reqd": 1
   },
   {

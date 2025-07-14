@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-07-14 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "task",
+  "task_subject",
+  "customer_site",
+  "site_address",
+  "column_break_basic",
+  "assigned_to",
+  "status",
+  "work_details_section",
+  "actual_start_time",
+  "actual_end_time",
+  "column_break_time",
+  "total_hours",
+  "work_summary",
+  "issues_section",
+  "has_issues",
+  "issue_description",
+  "attachments_section",
+  "work_photos"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "WR-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "작업",
+   "options": "Task",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "task.subject",
+   "fieldname": "task_subject",
+   "fieldtype": "Data",
+   "label": "작업 제목",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_site",
+   "fieldtype": "Link",
+   "label": "작업 사이트",
+   "options": "Customer Site",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer_site.address",
+   "fieldname": "site_address",
+   "fieldtype": "Small Text",
+   "label": "사이트 주소",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "담당자",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "상태",
+   "options": "Draft\nSubmitted\nApproved\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_details_section",
+   "fieldtype": "Section Break",
+   "label": "작업 상세"
+  },
+  {
+   "fieldname": "actual_start_time",
+   "fieldtype": "Datetime",
+   "label": "실제 시작 시간",
+   "reqd": 1
+  },
+  {
+   "fieldname": "actual_end_time",
+   "fieldtype": "Datetime",
+   "label": "실제 종료 시간",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_time",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "총 작업 시간",
+   "precision": 2,
+   "read_only": 1
+  },
+  {
+   "fieldname": "work_summary",
+   "fieldtype": "Text Editor",
+   "label": "작업 요약",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "issues_section",
+   "fieldtype": "Section Break",
+   "label": "이슈 보고"
+  },
+  {
+   "default": 0,
+   "fieldname": "has_issues",
+   "fieldtype": "Check",
+   "label": "이슈 발생"
+  },
+  {
+   "depends_on": "has_issues",
+   "fieldname": "issue_description",
+   "fieldtype": "Text",
+   "label": "이슈 상세"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "첨부 파일"
+  },
+  {
+   "fieldname": "work_photos",
+   "fieldtype": "Attach",
+   "label": "작업 사진"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-14 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WeBiz",
+ "name": "Work Report",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "task_subject",
+ "track_changes": 1
+}
