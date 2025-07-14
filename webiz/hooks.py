@@ -16,11 +16,43 @@ required_apps = ["erpnext"]
 fixtures = [
     {
         "dt": "Workspace",
-        "filters": [["name", "=", "현장관리"]]
+        "filters": [["name", "=", "webiz"]],
+        "prefix": "webiz"
     },
     {
-        "dt": "DocType",
-        "filters": [["module", "=", "WeBiz"]]
+        "dt": "Workspace",
+        "filters": [["name", "=", "견적관리"]],
+        "prefix": "quote"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "계약관리"]],
+        "prefix": "contract"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "고객관리"]],
+        "prefix": "customer"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "문서관리"]],
+        "prefix": "document"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "청구관리"]],
+        "prefix": "billing"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "프로젝트관리"]],
+        "prefix": "project"
+    },
+    {
+        "dt": "Workspace",
+        "filters": [["name", "=", "현장관리"]],
+        "prefix": "facility"
     }
 ]
 
